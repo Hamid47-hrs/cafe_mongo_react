@@ -4,7 +4,7 @@ const useStyle = makeStyles((theme) => ({
   container: {
     display: "flex",
     height: "6rem",
-    backgroundColor: "lightgreen",
+    backgroundColor: "#FFF1BD",
     padding: theme.spacing(2),
     paddingTop: theme.spacing(1.3),
     justifyContent: "space-between",
@@ -32,13 +32,8 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
   },
-  signIn_Up: {
-    backgroundColor: "lightGrey",
-    padding: theme.spacing(0.5),
-    borderRadius: "5px",
-  },
-  slash: {
-    cursor: "default",
+  shoppingCart: {
+    marginRight: theme.spacing(1),
   },
 }));
 
