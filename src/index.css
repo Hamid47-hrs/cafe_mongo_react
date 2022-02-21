@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "vasir";
+  font-family: "vazir";
   src: url("./fonts/Vazir/Vazir.eot");
   src: url("./fonts/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
     url("./fonts/Vazir/Vazir.ttf") format("truetype"),
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: "vasir Bold";
+  font-family: "vazir-Bold";
   src: url("./fonts/Vazir/Vazir-Bold.eot");
   src: url("./fonts/Vazir/Vazir-Bold.eot") format("embedded-opentype"),
     url("./fonts/Vazir/Vazir-Bold.ttf") format("truetype"),
@@ -25,7 +25,7 @@
 }
 
 @font-face {
-  font-family: "vasir light";
+  font-family: "vazir-light";
   src: url("./fonts/Vazir/Vazir-Light.eot");
   src: url("./fonts/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
     url("./fonts/Vazir/Vazir-Light.ttf") format("truetype"),
@@ -38,7 +38,7 @@
 }
 
 @font-face {
-  font-family: "vasir medium";
+  font-family: "vazir-medium";
   src: url("./fonts/Vazir/Vazir.eot");
   src: url("./fonts/Vazir/Vazir-Medium.eot") format("embedded-opentype"),
     url("./fonts/Vazir/Vazir-Medium.ttf") format("truetype"),
@@ -51,7 +51,7 @@
 }
 
 @font-face {
-  font-family: "vasir thin";
+  font-family: "vazir-thin";
   src: url("./fonts/Vazir/Vazir-Thin.eot");
   src: url("./fonts/Vazir/Vazir-Thin.eot") format("embedded-opentype"),
     url("./fonts/Vazir/Vazir-Thin.ttf") format("truetype"),
@@ -67,6 +67,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "vazir-medium";
 }
 
 body {
@@ -78,7 +79,6 @@ body {
 a {
   text-decoration: none;
 }
-
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
