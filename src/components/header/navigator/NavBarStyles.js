@@ -7,7 +7,7 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "center",
     padding: theme.spacing(2),
     height: "4rem",
-    backgroundColor: "lightgreen",
+    // backgroundColor: "lightgreen",
   },
   rightSideBar: {
     display: "flex",

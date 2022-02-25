@@ -14,6 +14,7 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 10,
     position: "relative",
     cursor: "pointer",
+    color: "#000",
   },
   imageContainer: {
     display: "flex",
@@ -22,8 +23,12 @@ const useStyle = makeStyles((theme) => ({
     width: "100%",
     height: 180,
     marginBottom: theme.spacing(2),
+    overflow: "hidden",
   },
-  productImage: { width: 150 },
+  productImage: {
+    width: 150,
+    borderRadius: 4,
+  },
   productTitle: {
     paddingBottom: theme.spacing(1),
   },
