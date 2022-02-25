@@ -87,9 +87,9 @@ const ProductNavigator = () => {
 
   return (
     <div className={classes.container}>
-      {products.map((item) => (
+      {products.map((item, index) => (
         <ProductCard
-          key={item.index}
+          key={index}
           title={item.title}
           description={item.description}
           price={item.price}
