@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       <header className={classes.container}>
-        <div>
+        <div className={classes.logos}>
           <Link href="#">
             <img className={classes.icon} src={icon} alt="cafe-mongo" />
           </Link>
