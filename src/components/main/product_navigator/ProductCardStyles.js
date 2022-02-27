@@ -15,6 +15,9 @@ const useStyle = makeStyles((theme) => ({
     position: "relative",
     cursor: "pointer",
     color: "#000",
+    "&:hover": {
+      boxShadow: "0 0 10px #fff",
+    },
   },
   imageContainer: {
     display: "flex",
