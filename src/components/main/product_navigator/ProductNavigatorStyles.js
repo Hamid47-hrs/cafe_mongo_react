@@ -5,7 +5,8 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     width: "100%",
     backgroundColor: '#bf8557a3',
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     borderRadius: 10,
     overflow: "scroll",
     '&::-webkit-scrollbar': {
