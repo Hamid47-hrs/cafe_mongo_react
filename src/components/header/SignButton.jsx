@@ -1,12 +1,16 @@
-import { Button } from "@material-ui/core";
+import { Button, Link } from "@material-ui/core";
 import useStyle from "./SignButtonStyles";
 const SignButton = () => {
   const classes = useStyle();
   return (
     <div className={classes.signIn_Up}>
-      <Button className={classes.signIn}>ورود کاربر</Button>
+      <Link href="/signup">
+        <Button className={classes.signIn}>ورود کاربر</Button>
+      </Link>
       <span className={classes.slash}>/</span>
-      <Button className={classes.signUp}>ثبت نام</Button>
+      <Link href="/login">
+        <Button className={classes.signUp}>ثبت نام</Button>
+      </Link>
     </div>
   );
 };
