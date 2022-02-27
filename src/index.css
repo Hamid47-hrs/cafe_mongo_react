@@ -450,15 +450,15 @@ color palette:
 */
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background-color: #818181;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #818181;
-  border-radius: 10px;
+  background-color: #c94646;
+  border-radius: 4px;
 }
