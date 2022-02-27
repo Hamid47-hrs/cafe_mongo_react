@@ -11,7 +11,7 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "center",
   },
   logos: {
-    marginTop: '1.1rem'
+    marginTop: "1.1rem",
   },
   icon: {
     width: "4rem",
@@ -23,14 +23,21 @@ const useStyle = makeStyles((theme) => ({
     width: "7rem",
     marginLeft: theme.spacing(2),
   },
-  searchBar: {
+  sreachContainer: {
+    display: "flex",
+    alignItems: "center",
     backgroundColor: "#dddddd4a",
-    width: "30%",
-    height: "3rem",
-    fontFamily: "vazir-bold",
-    fontSize: '0.8rem',
-    padding: theme.spacing(2),
     borderRadius: "5px",
+    width: "30%",
+    padding: theme.spacing(0.5),
+    paddingRight: theme.spacing(3),
+    color: "#aaaaaaff",
+    height: "3rem",
+  },
+  searchBar: {
+    padding: theme.spacing(1),
+    fontFamily: "vazir-bold",
+    fontSize: "0.8rem",
   },
   rightSideButtons: {
     display: "flex",
