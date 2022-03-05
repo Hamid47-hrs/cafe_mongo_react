@@ -13,7 +13,9 @@ const ProductCard = (props) => {
           alt="productImage"
         />
       </div>
-      <h4 className={classes.productTitle}>{props.title}</h4>
+      <h4 className={classes.productTitle}>
+        {props.subset} {props.name}
+      </h4>
       <p className={classes.productDescription}>{props.description}</p>
       <h5 className={classes.productPrice}>{props.price} تومان</h5>
     </Link>
