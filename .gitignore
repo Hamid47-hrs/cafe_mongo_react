@@ -27,6 +27,7 @@ yarn-error.log*
 /public/favicon_white.ico
 /public/logo_black.png
 /public/logo_white.png
+/public/images
 
 /src/fonts
 /src/images
