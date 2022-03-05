@@ -1,0 +1,146 @@
+[
+  {
+    "name": "ماسالا",
+    "type": "cafe",
+    "subset": "چای",
+    "price": "3800",
+    "image": "images/product_images/cafe/masala_Chai.jpg",
+    "description": "text",
+    "NumberOfPurchases": "3"
+  },
+  {
+    "name": "سبز",
+    "type": "cafe",
+    "subset": "چای",
+    "price": "2500",
+    "image": "images/product_images/cafe/green_tea.jpg",
+    "description": "text",
+    "NumberOfPurchases": "5"
+  },
+  {
+    "name": "لیمویی",
+    "type": "cafe",
+    "subset": "چای",
+    "price": "4000",
+    "image": "images/product_images/cafe/lemon_tea.jpg",
+    "description": "text",
+    "NumberOfPurchases": "7"
+  },
+  {
+    "name": "قرمز",
+    "type": "cafe",
+    "subset": "چای",
+    "price": "3000",
+    "image": "images/product_images/cafe/red_tea.jpg",
+    "description": "text",
+    "NumberOfPurchases": "3"
+  },
+  {
+    "name": "اسپرسو",
+    "type": "cafe",
+    "subset": "قهوه",
+    "price": "5000",
+    "image": "images/product_images/cafe/esspresso_coffee.jpg",
+    "description": "text",
+    "NumberOfPurchases": "10"
+  },
+  {
+    "name": "ترک",
+    "type": "cafe",
+    "subset": "قهوه",
+    "price": "7300",
+    "image": "images/product_images/cafe/turkish_coffee.jpg",
+    "description": "text",
+    "NumberOfPurchases": "5"
+  },
+  {
+    "name": "تمشک سیاه",
+    "type": "cafe",
+    "subset": "اسموتی",
+    "price": "14000",
+    "image": "images/product_images/cafe/blackBerry_smootie.jpg",
+    "description": "text",
+    "NumberOfPurchases": "8"
+  },
+  {
+    "name": "زرد",
+    "type": "cafe",
+    "subset": "کوکتل",
+    "price": "43000",
+    "image": "images/product_images/cafe/yellow_cocktail.jpg",
+    "description": "text",
+    "NumberOfPurchases": "4"
+  },
+  {
+    "name": "دبل",
+    "type": "fastFood",
+    "subset": "برگر",
+    "price": "84000",
+    "image": "images/product_images/fastFood/double_berger.jpg",
+    "description": "text",
+    "NumberOfPurchases": "7"
+  },
+  {
+    "name": "پپرونی",
+    "type": "fastFood",
+    "subset": "پیتزا",
+    "price": "110000",
+    "image": "images/product_images/fastFood/pepperoni_pizza.jpg",
+    "description": "text",
+    "NumberOfPurchases": "5"
+  },
+  {
+    "name": "ترک",
+    "type": "fastFood",
+    "subset": "کباب",
+    "price": "83000",
+    "image": "images/product_images/fastFood/turkish_Kebab.jpg",
+    "description": "text",
+    "NumberOfPurchases": "2"
+  },
+  {
+    "name": "بندری",
+    "type": "fastFood",
+    "subset": "سوسیس",
+    "price": "54000",
+    "image": "images/product_images/fastFood/sosis_bandari.jpg",
+    "description": "text",
+    "NumberOfPurchases": "6"
+  },
+  {
+    "name": "میت بال",
+    "type": "fastFood",
+    "subset": "پیتزا",
+    "price": "102000",
+    "image": "images/product_images/fastFood/meetball_pizza.jpg",
+    "description": "text",
+    "NumberOfPurchases": "1"
+  },
+  {
+    "name": "گوشت و قارچ",
+    "type": "fastFood",
+    "subset": "پیتزا",
+    "price": "76000",
+    "image": "images/product_images/fastFood/meatAndMashroom_pizza.jpg",
+    "description": "text",
+    "NumberOfPurchases": "9"
+  },
+  {
+    "name": "فلافل",
+    "type": "fastFood",
+    "subset": "ساندویچ",
+    "price": "17000",
+    "image": "images/product_images/fastFood/felafel_sandwich.jpg",
+    "description": "text",
+    "NumberOfPurchases": "1"
+  },
+  {
+    "name": "هات داگ",
+    "type": "fastFood",
+    "subset": "ساندویچ",
+    "price": "15000",
+    "image": "images/product_images/fastFood/hotDog_sandwich.jpg",
+    "description": "text",
+    "NumberOfPurchases": "10"
+  }
+]
