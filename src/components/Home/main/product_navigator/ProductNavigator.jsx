@@ -13,7 +13,8 @@ const ProductNavigator = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data))
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     getData();
