@@ -4,11 +4,12 @@ const useStyle = makeStyles((theme) => ({
   container: {
     width: "40%",
     padding: theme.spacing(2),
-    color: "#000000bf",
+    color: "#fffddd",
     position: "relative",
   },
   title: {
     marginTop: theme.spacing(2),
+    letterSpacing: "2px",
   },
   social: {
     marginTop: theme.spacing(4),
