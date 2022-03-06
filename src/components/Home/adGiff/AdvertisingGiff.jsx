@@ -1,4 +1,4 @@
-import video from "../../../../images/AdGiff/InShot_20220224_162920817_672x378.mp4";
+import video from "../../../images/AdGiff/InShot_20220224_162920817_672x378.mp4";
 import useStyle from "./AdvertisingGiffStyles.js";
 import { Divider } from "@material-ui/core";
 
