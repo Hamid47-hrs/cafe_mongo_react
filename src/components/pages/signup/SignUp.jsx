@@ -3,7 +3,6 @@ import {
   Typography,
   Grid,
   TextField,
-  Link,
   FormControlLabel,
   Checkbox,
   FormControl,
@@ -12,7 +11,8 @@ import {
   MenuItem,
   FormHelperText,
 } from "@material-ui/core";
-import logo from "../../images/icons/name_logo.png";
+import { Link } from "react-router-dom";
+import logo from "../../../images/icons/name_logo.png";
 import useStyle from "./SignUpStyles";
 
 const SignUpForm = () => {
@@ -21,7 +21,9 @@ const SignUpForm = () => {
   return (
     <div className={classes.container}>
       <div className={classes.logoContainer}>
-        <img className={classes.logo} src={logo} alt="logo" />
+        <Link to="/">
+          <img className={classes.logo} src={logo} alt="logo" />
+        </Link>
       </div>
       <div className={classes.wellcomeContainer}>
         <Typography className={classes.wellcomeText}>فرم ثبت نام</Typography>
@@ -125,10 +127,10 @@ const SignUpForm = () => {
             </MenuItem>
             <MenuItem className={classes.vipItems} value={12}>
               یک ساله : 300 هزار تومان
-              <span className={classes.vipOffer} >(30 درصد تخفیف ویژه)</span>
+              <span className={classes.vipOffer}>(30 درصد تخفیف ویژه)</span>
             </MenuItem>
           </Select>
-          <FormHelperText className={classes.chooseOffer} >
+          <FormHelperText className={classes.chooseOffer}>
             نوع اشتراک مورد نظر خود را انتخاب کنید.
           </FormHelperText>
         </FormControl>
@@ -138,7 +140,7 @@ const SignUpForm = () => {
         <Typography className={classes.didYouSignUp}>
           <span className={classes.asterisk}>*</span>
           قبلا ثبت نام کرده اید؟
-          <Link href="/login" className={classes.loginLink}>
+          <Link to="/login" className={classes.loginLink}>
             اینجا
           </Link>
           کلیک کنید.

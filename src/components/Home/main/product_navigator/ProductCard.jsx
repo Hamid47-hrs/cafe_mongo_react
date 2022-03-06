@@ -1,11 +1,11 @@
-import { Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import useStyle from "./ProductCardStyles";
 
 const ProductCard = (props) => {
   const classes = useStyle();
 
   return (
-    <Link href={props.link} className={classes.container}>
+    <Link to={`/products/${props.name}`} className={classes.container}>
       <div className={classes.imageContainer}>
         <img
           className={classes.productImage}

@@ -1,5 +1,6 @@
-import { Button, Typography, Grid, TextField, Link } from "@material-ui/core";
-import logo from "../../images/icons/name_logo.png";
+import { Button, Typography, Grid, TextField } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import logo from "../../../images/icons/name_logo.png";
 import useStyle from "./LoginStyles";
 
 const LoginForm = () => {
@@ -8,7 +9,9 @@ const LoginForm = () => {
   return (
     <div className={classes.container}>
       <div className={classes.logoContainer}>
-        <img className={classes.logo} src={logo} alt="logo" />
+        <Link to="/">
+          <img className={classes.logo} src={logo} alt="logo" />
+        </Link>
       </div>
       <div className={classes.wellcomeContainer}>
         <Typography className={classes.wellcomeText}>ورود کاربر</Typography>
@@ -45,7 +48,7 @@ const LoginForm = () => {
           <Typography className={classes.signUp}>
             <span className={classes.asterisk}>*</span>
             اگر هنوز ثبت نام نکرده اید
-            <Link href="/signup" className={classes.link}>
+            <Link to="/signup" className={classes.link}>
               اینجا
             </Link>
             کلیک کنید.
