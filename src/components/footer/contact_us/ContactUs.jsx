@@ -19,7 +19,10 @@ const ContactUs = () => {
         <Link href="/hamid" target="_newTab">
           <TwitterIcon className={classes.icons} />
         </Link>
-        <Link href="/hamid" target="_newTab">
+        <Link
+          href="http://linkedin.com/in/hamid-reza-sadati-hrs47"
+          target="_newTab"
+        >
           <LinkedInIcon className={classes.icons} />
         </Link>
         <Link href="https://github.com/Hamid47-hrs" target="_newTab">
