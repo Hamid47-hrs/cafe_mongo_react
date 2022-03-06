@@ -1,11 +1,15 @@
-import Main from "./main/Main";
+import ProductCarousel from "./carousel/ProductCarousel";
+import ProductNavigator from "./productNavigator/ProductNavigator";
+import AdvertisingGiff from "./adGiff/AdvertisingGiff";
 import useStyle from "./HomePageStyles";
 
 const HomePage = () => {
   const classes = useStyle();
   return (
     <div className={classes.root}>
-      <Main />
+      <ProductCarousel />
+      <ProductNavigator />
+      <AdvertisingGiff />
     </div>
   );
 };
