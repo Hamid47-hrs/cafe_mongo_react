@@ -1,4 +1,4 @@
-import ProductCard from "../../Home/main/product_navigator/ProductCard";
+import ProductCard from "../../Home/productNavigator/ProductCard";
 import useStyle from "./CafeStoreStyles";
 import { useEffect, useState } from "react";
 
@@ -23,22 +23,20 @@ const CafeStore = () => {
   }, []);
 
   return (
-    <>
-      <div className={classes.container}>
-        {products.map((item, index) => (
-          <ProductCard
-            key={index}
-            name={item.name}
-            type={item.type}
-            subset={item.subset}
-            description={item.description}
-            price={item.price}
-            image={item.image}
-            NOP={item.NumberOfPurchases}
-          />
-        ))}
-      </div>
-    </>
+    <div className={classes.container}>
+      {products.map((item, index) => (
+        <ProductCard
+          key={index}
+          name={item.name}
+          type={item.type}
+          subset={item.subset}
+          description={item.description}
+          price={item.price}
+          image={item.image}
+          NOP={item.NumberOfPurchases}
+        />
+      ))}
+    </div>
   );
 };
 
