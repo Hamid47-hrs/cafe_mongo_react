@@ -5,6 +5,8 @@ import LoginForm from "./components/pages/login/Login";
 import SignUpForm from "./components/pages/signup/SignUp";
 import ProductPage from "./components/pages/productPage/ProductPage";
 import CafeStore from "./components/pages/cafe/CafeStore";
+import FastFoodStore from "./components/pages/fastFood/FastFoodStore";
+import ComingSoon from "./components/pages/comingSoon/ComingSoon";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route exact path={"/"} component={HomePage} />
             <Route path={"/products/:productId"} component={ProductPage} />
             <Route path={"/cafe"} component={CafeStore} />
+            <Route path={"/fast-food"} component={FastFoodStore} />
+            <Route path={"/coming-soon"} component={ComingSoon} />
           </Main>
         </Switch>
       </Router>
