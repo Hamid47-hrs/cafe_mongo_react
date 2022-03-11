@@ -8,6 +8,9 @@ import CafeStore from "./components/pages/cafe/CafeStore";
 import FastFoodStore from "./components/pages/fastFood/FastFoodStore";
 import ComingSoon from "./components/pages/comingSoon/ComingSoon";
 import Cart from "./components/pages/Cart/Cart";
+import AboutUs from "./components/pages/aboutUs/AboutUs";
+import ContactUs from "./components/pages/contactUs/ContactUs";
+import VipMembership from "./components/pages/vipMembership/VipMembership";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path={"/fast-food"} component={FastFoodStore} />
             <Route path={"/coming-soon"} component={ComingSoon} />
             <Route path={"/cart"} component={Cart} />
+            <Route path={"/about-us"} component={AboutUs} />
+            <Route path={"/contact-us"} component={ContactUs} />
+            <Route path={"/vip-membership"} component={VipMembership} />
           </Main>
         </Switch>
       </Router>
