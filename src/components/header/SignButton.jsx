@@ -5,11 +5,11 @@ const SignButton = () => {
   const classes = useStyle();
   return (
     <div className={classes.signIn_Up}>
-      <Link to="/signup">
+      <Link to="/login">
         <Button className={classes.signIn}>ورود کاربر</Button>
       </Link>
       <span className={classes.slash}>/</span>
-      <Link to="/login">
+      <Link to="/signup">
         <Button className={classes.signUp}>ثبت نام</Button>
       </Link>
     </div>
