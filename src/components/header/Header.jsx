@@ -30,9 +30,11 @@ const Header = () => {
         </div>
         <div className={classes.rightSideButtons}>
           <SignButton />
-          <Button className={classes.shoppingCart}>
-            <ShoppingCartIcon />
-          </Button>
+          <Link to="/cart">
+            <Button className={classes.shoppingCart}>
+              <ShoppingCartIcon />
+            </Button>
+          </Link>
         </div>
       </header>
       <NavBar />

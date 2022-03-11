@@ -7,6 +7,7 @@ import ProductPage from "./components/pages/productPage/ProductPage";
 import CafeStore from "./components/pages/cafe/CafeStore";
 import FastFoodStore from "./components/pages/fastFood/FastFoodStore";
 import ComingSoon from "./components/pages/comingSoon/ComingSoon";
+import Cart from "./components/pages/Cart/Cart";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path={"/cafe"} component={CafeStore} />
             <Route path={"/fast-food"} component={FastFoodStore} />
             <Route path={"/coming-soon"} component={ComingSoon} />
+            <Route path={"/cart"} component={Cart} />
           </Main>
         </Switch>
       </Router>
