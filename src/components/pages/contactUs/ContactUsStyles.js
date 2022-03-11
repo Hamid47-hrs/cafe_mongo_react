@@ -1,8 +1,10 @@
 import { makeStyles } from "@material-ui/core";
+import image from "../../../images/istockphoto_86110739_612x6121.jpg";
 
 const useStyle = makeStyles((theme) => ({
   container: {
     padding: theme.spacing(2),
+    background: `url(${image})`,
   },
   contactMeTitle: {
     fontFamily: "vazir-bold",
