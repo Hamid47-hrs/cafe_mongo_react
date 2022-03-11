@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Main from "./components/main/Main";
 import HomePage from "./components/Home/HomePage";
 import LoginForm from "./components/pages/login/Login";
@@ -11,6 +16,7 @@ import Cart from "./components/pages/Cart/Cart";
 import AboutUs from "./components/pages/aboutUs/AboutUs";
 import ContactUs from "./components/pages/contactUs/ContactUs";
 import VipMembership from "./components/pages/vipMembership/VipMembership";
+import Page404 from "./components/pages/404/Page404";
 
 function App() {
   return (
@@ -29,6 +35,8 @@ function App() {
             <Route path={"/about-us"} component={AboutUs} />
             <Route path={"/contact-us"} component={ContactUs} />
             <Route path={"/vip-membership"} component={VipMembership} />
+            <Route path={"/404"} component={Page404} />
+            <Redirect to={"/404"} />
           </Main>
         </Switch>
       </Router>
