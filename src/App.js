@@ -4,6 +4,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Main from "./components/main/Main";
 import HomePage from "./components/Home/HomePage";
 import LoginForm from "./components/pages/login/Login";
@@ -35,11 +37,11 @@ function App() {
             <Route path={"/about-us"} component={AboutUs} />
             <Route path={"/contact-us"} component={ContactUs} />
             <Route path={"/vip-membership"} component={VipMembership} />
-            <Route path={"/404"} component={Page404} />
-            <Redirect to={"/404"} />
+            <Route path={"/not-found-404"} component={Page404} />
           </Main>
         </Switch>
       </Router>
+      <ToastContainer />
     </div>
   );
 }
