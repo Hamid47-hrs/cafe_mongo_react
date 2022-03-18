@@ -4,6 +4,7 @@ const useStyle = makeStyles((theme) => ({
   container: {
     display: "flex",
     flexDirection: "column",
+    backgroundColor: '#bf8557aa',
     width: 200,
     height: 330,
     margin: theme.spacing(3),
