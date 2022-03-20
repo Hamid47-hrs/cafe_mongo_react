@@ -1,6 +1,7 @@
 import { Button, InputBase } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import icon from "../../images/icons/PngItem_5251970.png";
 import logo from "../../images/icons/name_logo.png";
@@ -10,6 +11,7 @@ import NavBar from "./navigator/NavBar";
 
 const Header = () => {
   const classes = useStyle();
+
   return (
     <>
       <header className={classes.container}>
@@ -28,12 +30,17 @@ const Header = () => {
             placeholder="جستوجوی محصول ..."
           />
         </div>
-        <div className={classes.rightSideButtons}>
+        <div className={classes.LeftSideButtons}>
           <SignButton />
           <Link to="/cart">
             <Button className={classes.shoppingCart}>
               <ShoppingCartIcon />
             </Button>
+          </Link>
+        </div>
+        <div className={classes.navButtonContainer}>
+          <Link to="/menu" className={classes.navButton}>
+            <MenuIcon className={classes.navButtonIcon} />
           </Link>
         </div>
       </header>

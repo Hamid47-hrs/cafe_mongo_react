@@ -19,12 +19,13 @@ import AboutUs from "./components/pages/aboutUs/AboutUs";
 import ContactUs from "./components/pages/contactUs/ContactUs";
 import VipMembership from "./components/pages/vipMembership/VipMembership";
 import Page404 from "./components/pages/404/Page404";
-
+import NavigationButton from "./components/header/navigationButton/NavigationButton";
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route exact path={'/menu'} component={NavigationButton} />
           <Route exact path={"/login"} component={LoginForm} />
           <Route exact path={"/signup"} component={SignUpForm} />
           <Main>
