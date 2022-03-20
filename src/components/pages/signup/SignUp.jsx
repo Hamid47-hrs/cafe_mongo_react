@@ -45,6 +45,8 @@ const SignUpForm = () => {
       return ".رمز عبور و تکرار رمز عبور یکسان نیست";
     if (user.userPassword.length < 8)
       return ".طول رمز عبور کمتر از 8 کاراکتر است";
+    if (user.userName === user.userPassword)
+      return "نام کاربری و رمز عبور نباید یکسان باشد";
   };
 
   const signUpHandler = (event) => {
