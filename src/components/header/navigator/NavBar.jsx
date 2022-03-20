@@ -5,7 +5,7 @@ import vip_logo from "../../../images/icons/vip.png";
 const NavBar = () => {
   const classes = useStyle();
   return (
-    <div className={classes.root}>
+    <div className={classes.container}>
       <div className={classes.rightSideBar}>
         <div>
           <Link to="/cafe" className={classes.link}>
