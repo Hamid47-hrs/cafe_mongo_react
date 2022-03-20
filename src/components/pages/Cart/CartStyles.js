@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/core";
 const useStyle = makeStyles((theme) => ({
   container: {
     padding: theme.spacing(2),
+    [theme.breakpoints.down("375")]: {
+      padding: theme.spacing(0.5),
+    },
   },
   title: {
     fontFamily: "vazir-bold",
@@ -28,6 +31,9 @@ const useStyle = makeStyles((theme) => ({
     border: "solid 2px #aaaaaa99",
     borderRadius: 4,
     padding: theme.spacing(1.5),
+    [theme.breakpoints.down("790")]: {
+      flex: "1 1 70$",
+    },
   },
   productList: {
     fontFamily: "vazir",
@@ -41,6 +47,17 @@ const useStyle = makeStyles((theme) => ({
     border: "solid 2px #aaaaaa99",
     borderRadius: 4,
     padding: theme.spacing(1.5),
+    [theme.breakpoints.down("790")]: {
+      flex: "1 1 30%",
+    },
+    [theme.breakpoints.down("600")]: {
+      position: "fixed",
+      bottom: "0",
+      right: "0",
+      backgroundColor: "#fff",
+      width: "100%",
+      zIndex: "1",
+    },
   },
   totalPriceTitle: {
     fontFamily: "vazir",
@@ -55,6 +72,9 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: "#A3DA8D77",
     fontSize: "1rem",
     padding: "0.6rem 1.7rem",
+    [theme.breakpoints.down("1091")]: {
+      fontSize: "0.7rem",
+    },
   },
 }));
 

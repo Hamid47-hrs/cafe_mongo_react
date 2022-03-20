@@ -8,12 +8,14 @@ const useStyle = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    // height: "100vh",
   },
   logo: {
     width: "12rem",
     padding: theme.spacing(1),
-    backgroundColor: '#ffffff33',
-    borderRadius: '4px 15px'
+    backgroundColor: "#ffffff33",
+    borderRadius: "4px 15px",
   },
   wellcomeText: {
     fontFamily: "vazir-bold",
@@ -29,11 +31,20 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      width: "60%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+    },
   },
   userGrid: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   userGridItem: {
     width: "100%",
@@ -51,6 +62,9 @@ const useStyle = makeStyles((theme) => ({
   vipCheck: {
     "& .MuiFormControlLabel-label": {
       fontFamily: "vazir",
+      [theme.breakpoints.down("1130")]: {
+        fontSize: "0.85rem",
+      },
     },
   },
   formControl: {
@@ -75,6 +89,9 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     "&:hover": {
       border: "solid 2px #36bee7",
+    },
+    [theme.breakpoints.down("390")]: {
+      padding: "0.4rem 4rem"
     },
   },
   didYouSignUp: {

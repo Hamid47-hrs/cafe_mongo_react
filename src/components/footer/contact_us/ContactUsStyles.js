@@ -6,10 +6,17 @@ const useStyle = makeStyles((theme) => ({
     padding: theme.spacing(2),
     color: "#fffddd",
     position: "relative",
+    [theme.breakpoints.down("870")]: {
+      width: "100%",
+    },
   },
   title: {
     marginTop: theme.spacing(2),
     letterSpacing: "2px",
+    [theme.breakpoints.down("900")]: {
+      fontSize: "0.8rem",
+      marginLeft: theme.spacing(1),
+    },
   },
   social: {
     marginTop: theme.spacing(4),
@@ -17,6 +24,10 @@ const useStyle = makeStyles((theme) => ({
   icons: {
     fontSize: "2.3rem",
     marginLeft: theme.spacing(3),
+    [theme.breakpoints.down("900")]: {
+      fontSize: "2rem",
+      marginLeft: theme.spacing(1),
+    },
   },
   text: {
     position: "absolute",
@@ -25,6 +36,9 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     fontSize: "1.2rem",
     fontFamily: "vazir",
+    [theme.breakpoints.down("420")]: {
+      position: "static",
+    },
   },
 }));
 

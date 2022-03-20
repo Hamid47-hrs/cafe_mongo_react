@@ -9,6 +9,9 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 4,
     padding: theme.spacing(1.5),
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down("375")]: {
+      padding: theme.spacing(0.5),
+    },
   },
   productImageContaienr: {
     width: 50,
@@ -17,6 +20,9 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 4,
     marginLeft: theme.spacing(2),
     backgroundColor: "#00000066",
+    [theme.breakpoints.down("375")]: {
+      marginLeft: theme.spacing(0.5),
+    },
   },
   productImage: {
     width: "100%",
@@ -32,6 +38,25 @@ const useStyle = makeStyles((theme) => ({
   },
   productPrice: {
     fontFamily: "vazir-medium",
+  },
+  titleText: {
+    [theme.breakpoints.down("375")]: {
+      display: "none",
+    },
+  },
+  deleteButton: {
+    [theme.breakpoints.down("375")]: {
+      display: "none",
+    },
+  },
+  deleteButtonSpan: {
+    [theme.breakpoints.down("375")]: {
+      display: "block",
+      cursor: "pointer",
+    },
+    [theme.breakpoints.up("375")]: {
+      display: "none",
+    },
   },
 }));
 

@@ -4,11 +4,14 @@ const useStyle = makeStyles((theme) => ({
   container: {
     display: "flex",
     height: "6rem",
-    // backgroundColor: "#FFF1BD",
+    backgroundColor: "#FFF1BD",
     padding: theme.spacing(3),
     paddingTop: theme.spacing(3),
     justifyContent: "space-between",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      height: "4rem",
+    },
   },
   logos: {
     marginTop: "1.1rem",
@@ -17,11 +20,18 @@ const useStyle = makeStyles((theme) => ({
     width: "4rem",
     height: "4rem",
     marginLeft: theme.spacing(2),
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   logo: {
     height: "4rem",
     width: "7rem",
     marginLeft: theme.spacing(2),
+    [theme.breakpoints.down("sm")]: {
+      height: "2.5rem",
+      width: "4rem",
+    },
   },
   sreachContainer: {
     display: "flex",
@@ -33,18 +43,32 @@ const useStyle = makeStyles((theme) => ({
     paddingRight: theme.spacing(3),
     color: "#aaaaaaff",
     height: "3rem",
+    [theme.breakpoints.down("sm")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
   searchBar: {
     padding: theme.spacing(1),
     fontFamily: "vazir-bold",
     fontSize: "0.8rem",
   },
-  rightSideButtons: {
+  LeftSideButtons: {
     display: "flex",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   shoppingCart: {
     marginRight: theme.spacing(1),
+  },
+  navButtonContainer: {
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
   },
 }));
 

@@ -22,6 +22,9 @@ const useStyle = makeStyles((theme) => ({
     textShadow: "0 0 5px #ffffffaa",
     transform: "rotateZ(20deg)",
     marginRight: theme.spacing(7),
+    [theme.breakpoints.down("1080")]: {
+      display: "none",
+    },
   },
   comingSoonEn: {
     fontFamily: "vazir-bold",
@@ -29,6 +32,9 @@ const useStyle = makeStyles((theme) => ({
     color: "#28a102",
     textShadow: "0 0 10px #000000dd",
     transform: "rotateZ(-15deg)",
+    [theme.breakpoints.down("1080")]: {
+      display: "none",
+    },
   },
   comingSoonPNG: {
     width: "300px",
@@ -36,6 +42,9 @@ const useStyle = makeStyles((theme) => ({
     top: "50%",
     right: "50%",
     transform: "translateY(-50%) translateX(50%)",
+    [theme.breakpoints.down("430")]: {
+      width: "200px",
+    },
   },
 }));
 

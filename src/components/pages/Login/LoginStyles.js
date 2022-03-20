@@ -17,6 +17,9 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: "#ffffff33",
     borderRadius: "4px 15px",
     marginBottom: theme.spacing(1.5),
+    [theme.breakpoints.down("xs")]: {
+      width: "10rem",
+    },
   },
   wellcomeText: {
     fontFamily: "vazir-bold",
@@ -29,6 +32,15 @@ const useStyle = makeStyles((theme) => ({
     padding: "1rem 2rem",
     borderRadius: 10,
     width: "35%",
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+    },
   },
   userGridItem: {
     width: "100%",
@@ -50,10 +62,16 @@ const useStyle = makeStyles((theme) => ({
     "&:hover": {
       border: "solid 2px #36bee7",
     },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.4rem 5rem",
+    },
   },
   signUp: {
     fontFamily: "vazir",
     fontSize: "1.1rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem",
+    },
   },
   asterisk: {
     color: "red",

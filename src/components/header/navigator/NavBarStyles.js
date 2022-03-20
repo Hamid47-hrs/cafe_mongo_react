@@ -1,13 +1,16 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
-  root: {
+  container: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: theme.spacing(2),
     height: "4rem",
     // backgroundColor: "lightgreen",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   rightSideBar: {
     display: "flex",
