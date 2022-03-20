@@ -13,15 +13,20 @@ const SingleProduct = () => {
       </div>
       <div className={classes.productInfoContianer}>
         <Typography className={classes.productTitle}>
-          عنوان محصول : کوکتل زرد
+          <span className={classes.titleText}>عنوان محصول : </span>
+          کوکتل زرد
         </Typography>
         <Typography className={classes.productPrice}>
-          قیمت محصول : 3000 تومان
+          <span className={classes.titleText}>قیمت محصول : </span>
+          3000 تومان
         </Typography>
       </div>
       <Button className={classes.deleteButton}>
         <DeleteForeverIcon className={classes.deleteButtonIcon} />
       </Button>
+      <span className={classes.deleteButtonSpan}>
+        <DeleteForeverIcon className={classes.deleteButtonIcon} />
+      </span>
     </div>
   );
 };
