@@ -5,6 +5,7 @@ import useStyle from "./ProductNavigatorStyles";
 const ProductNavigator = () => {
   const classes = useStyle();
   const [products, setProducts] = useState([]);
+
   const getData = () => {
     fetch("./product.json", {
       method: "GET",
@@ -13,7 +14,11 @@ const ProductNavigator = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {
+        data.sort((a, b) => b.NumberOfPurchases - a.NumberOfPurchases);
+        data = data.slice(0, 10);
+        setProducts(data);
+      })
       .catch((err) => console.log(err));
   };
   useEffect(() => {
