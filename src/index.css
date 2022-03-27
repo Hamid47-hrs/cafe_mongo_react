@@ -1,11 +1,11 @@
 @font-face {
   font-family: "vazir";
-  src: url("./fonts/Vazir/Vazir.eot");
-  src: url("./fonts/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Vazir/Vazir.ttf") format("truetype"),
-    url("./fonts/Vazir/Vazir.woff") format("woff"),
-    url("./fonts/Vazir/Vazir.woff2") format("woff2"),
-    url("./fonts/Vazir/Vazir.svg#svgvazir") format("svg");
+  src: url("/public/fonts/Vazir/Vazir.eot");
+  src: url("/public/fonts/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("/public/fonts/Vazir/Vazir.ttf") format("truetype"),
+    url("/public/fonts/Vazir/Vazir.woff") format("woff"),
+    url("/public/fonts/Vazir/Vazir.woff2") format("woff2"),
+    url("/public/fonts/Vazir/Vazir.svg#svgvazir") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,12 +13,12 @@
 
 @font-face {
   font-family: "vazir-Bold";
-  src: url("./fonts/Vazir/Vazir-Bold.eot");
-  src: url("./fonts/Vazir/Vazir-Bold.eot") format("embedded-opentype"),
-    url("./fonts/Vazir/Vazir-Bold.ttf") format("truetype"),
-    url("./fonts/Vazir/Vazir-Bold.woff") format("woff"),
-    url("./fonts/Vazir/Vazir-Bold.woff2") format("woff2"),
-    url("./fonts/Vazir/Vazir-Bold.svg") format("svg");
+  src: url("/public/fonts/Vazir/Vazir-Bold.eot");
+  src: url("/public/fonts/Vazir/Vazir-Bold.eot") format("embedded-opentype"),
+    url("/public/fonts/Vazir/Vazir-Bold.ttf") format("truetype"),
+    url("/public/fonts/Vazir/Vazir-Bold.woff") format("woff"),
+    url("/public/fonts/Vazir/Vazir-Bold.woff2") format("woff2"),
+    url("/public/fonts/Vazir/Vazir-Bold.svg") format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -26,12 +26,12 @@
 
 @font-face {
   font-family: "vazir-light";
-  src: url("./fonts/Vazir/Vazir-Light.eot");
-  src: url("./fonts/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/Vazir/Vazir-Light.ttf") format("truetype"),
-    url("./fonts/Vazir/Vazir-Light.woff") format("woff"),
-    url("./fonts/Vazir/Vazir-Light.woff2") format("woff2"),
-    url("./fonts/Vazir/Vazir-Light.svg") format("svg");
+  src: url("/public/fonts/Vazir/Vazir-Light.eot");
+  src: url("/public/fonts/Vazir/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("/public/fonts/Vazir/Vazir-Light.ttf") format("truetype"),
+    url("/public/fonts/Vazir/Vazir-Light.woff") format("woff"),
+    url("/public/fonts/Vazir/Vazir-Light.woff2") format("woff2"),
+    url("/public/fonts/Vazir/Vazir-Light.svg") format("svg");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -39,12 +39,12 @@
 
 @font-face {
   font-family: "vazir-medium";
-  src: url("./fonts/Vazir/Vazir.eot");
-  src: url("./fonts/Vazir/Vazir-Medium.eot") format("embedded-opentype"),
-    url("./fonts/Vazir/Vazir-Medium.ttf") format("truetype"),
-    url("./fonts/Vazir/Vazir-Medium.woff") format("woff"),
-    url("./fonts/Vazir/Vazir-Medium.woff2") format("woff2"),
-    url("./fonts/Vazir/Vazir-Medium.svg") format("svg");
+  src: url("/public/fonts/Vazir/Vazir.eot");
+  src: url("/public/fonts/Vazir/Vazir-Medium.eot") format("embedded-opentype"),
+    url("/public/fonts/Vazir/Vazir-Medium.ttf") format("truetype"),
+    url("/public/fonts/Vazir/Vazir-Medium.woff") format("woff"),
+    url("/public/fonts/Vazir/Vazir-Medium.woff2") format("woff2"),
+    url("/public/fonts/Vazir/Vazir-Medium.svg") format("svg");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -52,12 +52,12 @@
 
 @font-face {
   font-family: "vazir-thin";
-  src: url("./fonts/Vazir/Vazir-Thin.eot");
-  src: url("./fonts/Vazir/Vazir-Thin.eot") format("embedded-opentype"),
-    url("./fonts/Vazir/Vazir-Thin.ttf") format("truetype"),
-    url("./fonts/Vazir/Vazir-Thin.woff") format("woff"),
-    url("./fonts/Vazir/Vazir-Thin.woff2") format("woff2"),
-    url("./fonts/Vazir/Vazir-Thin.svg") format("svg");
+  src: url("/public/fonts/Vazir/Vazir-Thin.eot");
+  src: url("/public/fonts/Vazir/Vazir-Thin.eot") format("embedded-opentype"),
+    url("/public/fonts/Vazir/Vazir-Thin.ttf") format("truetype"),
+    url("/public/fonts/Vazir/Vazir-Thin.woff") format("woff"),
+    url("/public/fonts/Vazir/Vazir-Thin.woff2") format("woff2"),
+    url("/public/fonts/Vazir/Vazir-Thin.svg") format("svg");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -78,6 +78,12 @@ body {
 
 a {
   text-decoration: none;
+}
+
+p.makeStyles-productDescription-131 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
