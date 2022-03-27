@@ -12,6 +12,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProductCard from "../../../Home/productNavigator/ProductCard";
+import AdminHeader from "../header/AdminHeader";
 import useStyle from "./AddProductStyles";
 
 const AddProduct = () => {
@@ -93,159 +94,166 @@ const AddProduct = () => {
     fetch();
   };
   return (
-    <div className={classes.container}>
-      <div className={classes.titleContainer}>
-        <Typography className={classes.title} variant="h2">
-          افزدون محصول
-        </Typography>
-        <Typography className={classes.subTitle}>
-          جهت افزودن محصول اطلاعات لازم را در فیلدهای مشخص شده وارد کنید.
-        </Typography>
-      </div>
-      <div className={classes.body}>
-        <div className={classes.formContainer}>
-          <form id="productFrom" className={classes.form}>
-            <Grid container className={classes.productFormGrid}>
-              <Grid item className={classes.productFormGridItem}>
-                <TextField
-                  className={classes.productInput}
-                  name="productName"
-                  label="نام محصول *"
-                  type="text"
-                  value={productName ? productName : ""}
-                  onFocus={(event) => selectContent(event)}
-                  onChange={(event) => setProductName(event.target.value)}
-                />
-              </Grid>
-              <Grid item className={classes.productFormGridItem}>
-                <FormControl className={classes.productInput}>
-                  <InputLabel shrink>نوع محصول *</InputLabel>
-                  <Select
-                    displayEmpty
-                    onChange={(event) => setProductType(event.target.value)}
-                  >
-                    <MenuItem className={classes.itemSelect}>
-                      <em>نوع محصول را انتخاب کنید</em>
-                    </MenuItem>
-                    <MenuItem value={"cafe"}>
-                      <span className={classes.itemSelect}>کافه</span>
-                    </MenuItem>
-                    <MenuItem value={"fastFood"}>
-                      <span className={classes.itemSelect}>فست فود</span>
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item className={classes.productFormGridItem}>
-                {productType === "fastFood" && (
+    <>
+      <AdminHeader />
+      <div className={classes.container}>
+        <div className={classes.titleContainer}>
+          <Typography className={classes.title} variant="h2">
+            افزدون محصول
+          </Typography>
+          <Typography className={classes.subTitle}>
+            جهت افزودن محصول اطلاعات لازم را در فیلدهای مشخص شده وارد کنید.
+          </Typography>
+        </div>
+        <div className={classes.body}>
+          <div className={classes.formContainer}>
+            <form id="productFrom" className={classes.form}>
+              <Grid container className={classes.productFormGrid}>
+                <Grid item className={classes.productFormGridItem}>
+                  <TextField
+                    className={classes.productInput}
+                    name="productName"
+                    label="نام محصول *"
+                    type="text"
+                    value={productName ? productName : ""}
+                    onFocus={(event) => selectContent(event)}
+                    onChange={(event) => setProductName(event.target.value)}
+                  />
+                </Grid>
+                <Grid item className={classes.productFormGridItem}>
                   <FormControl className={classes.productInput}>
-                    <InputLabel shrink>زیر مجموعه محصول *</InputLabel>
+                    <InputLabel shrink>نوع محصول *</InputLabel>
                     <Select
                       displayEmpty
-                      onChange={(event) => setProductSubset(event.target.value)}
+                      onChange={(event) => setProductType(event.target.value)}
                     >
-                      <MenuItem>
-                        <em>زیر مجموعه محصول را انتخاب کنید</em>
+                      <MenuItem className={classes.itemSelect}>
+                        <em>نوع محصول را انتخاب کنید</em>
                       </MenuItem>
-                      <MenuItem value={"ساندویچ"}>
-                        <span className={classes.itemSelect}>ساندویچ</span>
+                      <MenuItem value={"cafe"}>
+                        <span className={classes.itemSelect}>کافه</span>
                       </MenuItem>
-                      <MenuItem value={"پیتزا"}>
-                        <span className={classes.itemSelect}>پیتزا</span>
-                      </MenuItem>
-                      <MenuItem value={"برگر"}>
-                        <span className={classes.itemSelect}>برگر</span>
+                      <MenuItem value={"fastFood"}>
+                        <span className={classes.itemSelect}>فست فود</span>
                       </MenuItem>
                     </Select>
                   </FormControl>
-                )}
-                {productType === "cafe" && (
-                  <FormControl className={classes.productInput}>
-                    <InputLabel shrink>زیر مجموعه محصول *</InputLabel>
-                    <Select
-                      displayEmpty
-                      onChange={(event) => setProductSubset(event.target.value)}
-                    >
-                      <MenuItem>
-                        <em>زیر مجموعه محصول را انتخاب کنید</em>
-                      </MenuItem>
-                      <MenuItem value={"چای"}>
-                        <span className={classes.itemSelect}>چای</span>
-                      </MenuItem>
-                      <MenuItem value={"کوکتل"}>
-                        <span className={classes.itemSelect}>کوکتل</span>
-                      </MenuItem>
-                      <MenuItem value={"اسموتی"}>
-                        <span className={classes.itemSelect}>اسموتی</span>
-                      </MenuItem>
-                      <MenuItem value={"قهوه"}>
-                        <span className={classes.itemSelect}>قهوه</span>
-                      </MenuItem>
-                    </Select>
-                  </FormControl>
-                )}
+                </Grid>
+                <Grid item className={classes.productFormGridItem}>
+                  {productType === "fastFood" && (
+                    <FormControl className={classes.productInput}>
+                      <InputLabel shrink>زیر مجموعه محصول *</InputLabel>
+                      <Select
+                        displayEmpty
+                        onChange={(event) =>
+                          setProductSubset(event.target.value)
+                        }
+                      >
+                        <MenuItem>
+                          <em>زیر مجموعه محصول را انتخاب کنید</em>
+                        </MenuItem>
+                        <MenuItem value={"ساندویچ"}>
+                          <span className={classes.itemSelect}>ساندویچ</span>
+                        </MenuItem>
+                        <MenuItem value={"پیتزا"}>
+                          <span className={classes.itemSelect}>پیتزا</span>
+                        </MenuItem>
+                        <MenuItem value={"برگر"}>
+                          <span className={classes.itemSelect}>برگر</span>
+                        </MenuItem>
+                      </Select>
+                    </FormControl>
+                  )}
+                  {productType === "cafe" && (
+                    <FormControl className={classes.productInput}>
+                      <InputLabel shrink>زیر مجموعه محصول *</InputLabel>
+                      <Select
+                        displayEmpty
+                        onChange={(event) =>
+                          setProductSubset(event.target.value)
+                        }
+                      >
+                        <MenuItem>
+                          <em>زیر مجموعه محصول را انتخاب کنید</em>
+                        </MenuItem>
+                        <MenuItem value={"چای"}>
+                          <span className={classes.itemSelect}>چای</span>
+                        </MenuItem>
+                        <MenuItem value={"کوکتل"}>
+                          <span className={classes.itemSelect}>کوکتل</span>
+                        </MenuItem>
+                        <MenuItem value={"اسموتی"}>
+                          <span className={classes.itemSelect}>اسموتی</span>
+                        </MenuItem>
+                        <MenuItem value={"قهوه"}>
+                          <span className={classes.itemSelect}>قهوه</span>
+                        </MenuItem>
+                      </Select>
+                    </FormControl>
+                  )}
+                </Grid>
+                <Grid item className={classes.productFormGridItem}>
+                  <TextField
+                    className={classes.productInput}
+                    name="productPrice"
+                    label="قیمت محصول *"
+                    type="number"
+                    value={productPrice ? productPrice : 0}
+                    onFocus={(event) => selectContent(event)}
+                    onChange={(event) => setProductPrice(event.target.value)}
+                  />
+                </Grid>
+                <Grid item className={classes.productFormGridItem}>
+                  <TextField
+                    className={classes.productInput}
+                    name="productImage"
+                    label="تصویر محصول *"
+                    type={"file"}
+                    onChange={imageUploader}
+                  />
+                </Grid>
+                <Grid item className={classes.productFormGridItem}>
+                  <TextField
+                    className={classes.productInput}
+                    name="productDescription"
+                    label="توضیح محصول *"
+                    multiline
+                    type="Text"
+                    minRows={4}
+                    maxRows={4}
+                    value={productDescription ? productDescription : ""}
+                    onFocus={(event) => selectContent(event)}
+                    onChange={(event) =>
+                      setProductDescription(event.target.value)
+                    }
+                  />
+                </Grid>
+                <Button
+                  onClick={(event) => addProductHandler(event)}
+                  className={classes.submitButton}
+                  type="submit"
+                >
+                  ایجاد محصول
+                </Button>
+                <Button onClick={resetForm} className={classes.submitButton}>
+                  شروع مجدد
+                </Button>
               </Grid>
-              <Grid item className={classes.productFormGridItem}>
-                <TextField
-                  className={classes.productInput}
-                  name="productPrice"
-                  label="قیمت محصول *"
-                  type="number"
-                  value={productPrice ? productPrice : 0}
-                  onFocus={(event) => selectContent(event)}
-                  onChange={(event) => setProductPrice(event.target.value)}
-                />
-              </Grid>
-              <Grid item className={classes.productFormGridItem}>
-                <TextField
-                  className={classes.productInput}
-                  name="productImage"
-                  label="تصویر محصول *"
-                  type={"file"}
-                  onChange={imageUploader}
-                />
-              </Grid>
-              <Grid item className={classes.productFormGridItem}>
-                <TextField
-                  className={classes.productInput}
-                  name="productDescription"
-                  label="توضیح محصول *"
-                  multiline
-                  type="Text"
-                  minRows={4}
-                  maxRows={4}
-                  value={productDescription ? productDescription : ""}
-                  onFocus={(event) => selectContent(event)}
-                  onChange={(event) =>
-                    setProductDescription(event.target.value)
-                  }
-                />
-              </Grid>
-              <Button
-                onClick={(event) => addProductHandler(event)}
-                className={classes.submitButton}
-                type="submit"
-              >
-                ایجاد محصول
-              </Button>
-              <Button onClick={resetForm} className={classes.submitButton}>
-                شروع مجدد
-              </Button>
-            </Grid>
-          </form>
-        </div>
-        <div className={classes.preProductContainer}>
-          <ProductCard
-            name={product.productName}
-            type={product.productType}
-            subset={product.productSubset}
-            description={product.productDescription}
-            price={product.productPrice}
-            image={product.productImagePath}
-          />
+            </form>
+          </div>
+          <div className={classes.preProductContainer}>
+            <ProductCard
+              name={product.productName}
+              type={product.productType}
+              subset={product.productSubset}
+              description={product.productDescription}
+              price={product.productPrice}
+              image={product.productImagePath}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
