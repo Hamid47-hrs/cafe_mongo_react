@@ -4,9 +4,9 @@ const useStyle = makeStyles((theme) => ({
   container: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: '#bf8557aa',
+    backgroundColor: "#bf8557aa",
     width: 200,
-    height: 330,
+    height: 340,
     margin: theme.spacing(3),
     padding: theme.spacing(2),
     paddingTop: theme.spacing(0.5),
@@ -15,10 +15,12 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 10,
     position: "relative",
     cursor: "pointer",
-    color: "#000",
     "&:hover": {
       boxShadow: "0 0 10px #fff",
     },
+  },
+  link: {
+    color: "#000",
   },
   imageContainer: {
     display: "flex",
@@ -35,17 +37,34 @@ const useStyle = makeStyles((theme) => ({
   },
   productTitle: {
     paddingBottom: theme.spacing(1),
+    wordWrap: "break-word",
   },
   productDescription: {
+    height: '45px',
+    overflow: 'hidden',
+    textAlign: 'justify',
     paddingRight: theme.spacing(1),
     paddingBottom: theme.spacing(1),
-    lineHeight: 1.3,
+    lineHeight: 1.2,
+    fontSize: "0.8rem"
+  },
+  button_priceContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    position: "absolute",
+    bottom: 15,
+  },
+  addToCartButton: {
+    marginLeft: theme.spacing(2),
+    backgroundColor: "#ffffffdd",
+    "&:hover": {
+      color: "#fff",
+      backgroundColor: "#000000dd",
+    },
   },
   productPrice: {
-    position: "absolute",
-    left: 15,
-    bottom: 15,
-    fontSize: "1rem",
+    fontSize: "0.9rem",
   },
 }));
 
