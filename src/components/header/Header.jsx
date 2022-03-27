@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button, InputBase } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -5,12 +6,26 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import icon from "../../images/icons/PngItem_5251970.png";
 import logo from "../../images/icons/name_logo.png";
-import useStyle from "./HeaderStyles";
 import SignButton from "./SignButton";
 import NavBar from "./navigator/NavBar";
+import useStyle from "./HeaderStyles";
 
 const Header = () => {
   const classes = useStyle();
+
+  const [logedIn, setLogedIn] = useState("");
+
+  const userAuthorized = localStorage.getItem("x-auth-token");
+
+  const logOut = () => {
+    setLogedIn("");
+    localStorage.removeItem("x-auth-token");
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    setLogedIn(userAuthorized);
+  }, [userAuthorized]);
 
   return (
     <>
@@ -31,8 +46,14 @@ const Header = () => {
           />
         </div>
         <div className={classes.LeftSideButtons}>
-          <SignButton />
-          <Link to="/cart">
+          {logedIn ? (
+            <Button className={classes.logOutButton} onClick={logOut}>
+              خروج
+            </Button>
+          ) : (
+            <SignButton />
+          )}
+          <Link to="/cart/:userId">
             <Button className={classes.shoppingCart}>
               <ShoppingCartIcon />
             </Button>

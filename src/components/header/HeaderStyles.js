@@ -62,6 +62,11 @@ const useStyle = makeStyles((theme) => ({
       display: "none",
     },
   },
+  logOutButton: {
+    backgroundColor: "lightGrey",
+    padding: theme.spacing(0.5),
+    borderRadius: "5px",
+  },
   shoppingCart: {
     marginRight: theme.spacing(1),
   },
