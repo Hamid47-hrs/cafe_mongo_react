@@ -73,7 +73,7 @@ const SignUpForm = () => {
       .then((data) => {
         toast.success(".ثبت نام با موفقیت انجام شد");
         localStorage.setItem("x-auth-token", data["x-auth-token"]);
-        history.push("/login");
+        history.push("/");
       })
       .catch((err) => toast.error(err));
   };
