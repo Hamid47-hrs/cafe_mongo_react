@@ -28,6 +28,7 @@ yarn-error.log*
 /public/logo_black.png
 /public/logo_white.png
 /public/images
+/public/fonts
 
 /src/fonts
 /src/images
