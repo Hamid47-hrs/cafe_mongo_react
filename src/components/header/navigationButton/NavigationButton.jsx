@@ -1,19 +1,34 @@
+import { useState, useEffect } from "react";
 import { Button } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link, useHistory } from "react-router-dom";
-import useStyle from "./NavigationButtonStyles";
 import vip_logo from "../../../images/icons/vip.png";
 import SignButton from "../SignButton";
+import useStyle from "./NavigationButtonStyles";
 
 const NavigationButton = () => {
   const classes = useStyle();
   const history = useHistory();
 
+  const [logedIn, setLogedIn] = useState("");
+
+  const userAuthorized = localStorage.getItem("x-auth-token");
+
+  const logOut = () => {
+    setLogedIn("");
+    localStorage.removeItem("x-auth-token");
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    setLogedIn(userAuthorized);
+  }, [userAuthorized]);
+
   const closeMenu = () => {
     history.goBack();
   };
-  
+
   return (
     <div className={classes.container}>
       <div className={classes.closeIcon}>
@@ -22,7 +37,13 @@ const NavigationButton = () => {
         </Button>
       </div>
       <div className={classes.topContainer}>
-        <SignButton />
+        {logedIn ? (
+          <Button className={classes.logOutButton} onClick={logOut}>
+            خروج
+          </Button>
+        ) : (
+          <SignButton />
+        )}
         <Link to="/cart">
           <Button className={classes.shoppingCart}>
             <ShoppingCartIcon />

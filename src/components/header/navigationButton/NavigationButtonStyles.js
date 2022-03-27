@@ -21,6 +21,11 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "center",
     marginBottom: theme.spacing(3),
   },
+  logOutButton: {
+    backgroundColor: "lightGrey",
+    padding: theme.spacing(0.5),
+    borderRadius: "5px",
+  },
   links: {
     display: "flex",
     flexDirection: "column",
