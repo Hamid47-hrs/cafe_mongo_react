@@ -18,11 +18,6 @@ const NavBar = () => {
           </Link>
         </div>
         <div>
-          <Link to="/coming-soon" className={classes.link}>
-            به زودی
-          </Link>
-        </div>
-        <div>
           <Link to="/about-us" className={classes.link}>
             درباره ی ما
           </Link>
@@ -32,11 +27,16 @@ const NavBar = () => {
             تماس با ما
           </Link>
         </div>
-        <div>
+          <div>
+            <Link to="/coming-soon" className={classes.link}>
+              به زودی
+            </Link>
+          </div>
+        {/* <div>
           <Link to="/wiki-coffee" className={classes.link}>
             ویکی قهوه
           </Link>
-        </div>
+        </div> */}
       </div>
       <div className={classes.leftSideBar}>
         <Link to="/vip-membership" className={classes.link_vip}>
