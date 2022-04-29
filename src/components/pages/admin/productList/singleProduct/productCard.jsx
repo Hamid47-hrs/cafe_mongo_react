@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useStyle from "./productCardStyles";
+import useStyle from "./ProductCardStyles";
 
 const ProductCard = (props) => {
   const classes = useStyle();

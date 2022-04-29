@@ -1,12 +1,12 @@
 import AdminHeader from "./header/AdminHeader";
 
 const Admin = (props) => {
-  return (
-    <div>
-      <AdminHeader />
-      <div>{props.children}</div>
-    </div>
-  );
-};
+    return(
+        <>
+        <AdminHeader />
+        <div>{props.children}</div>
+        </>
+    )
+}
 
 export default Admin;
