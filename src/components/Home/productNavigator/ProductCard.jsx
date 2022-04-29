@@ -5,7 +5,9 @@ import useStyle from "./ProductCardStyles";
 const ProductCard = (props) => {
   const classes = useStyle();
 
-  const addToCart = () => {};
+  const addToCart = () => {
+  };
+
 
   return (
     <div className={classes.container}>
