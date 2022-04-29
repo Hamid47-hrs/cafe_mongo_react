@@ -67,11 +67,6 @@ const NavigationButton = () => {
           </Link>
         </div>
         <div className={classes.linkContainer}>
-          <Link to="/coming-soon" className={classes.link}>
-            به زودی
-          </Link>
-        </div>
-        <div className={classes.linkContainer}>
           <Link to="/about-us" className={classes.link}>
             درباره ی ما
           </Link>
@@ -82,10 +77,15 @@ const NavigationButton = () => {
           </Link>
         </div>
         <div className={classes.linkContainer}>
+          <Link to="/coming-soon" className={classes.link}>
+            به زودی
+          </Link>
+        </div>
+        {/* <div className={classes.linkContainer}>
           <Link to="/wiki-coffee" className={classes.link}>
             ویکی قهوه
           </Link>
-        </div>
+        </div> */}
       </div>
       <div className={classes.BottomContainer}>
         <Link to="/vip-membership" className={classes.link_vip}>
