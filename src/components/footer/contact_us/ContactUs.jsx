@@ -13,14 +13,14 @@ const ContactUs = () => {
     <div className={classes.container}>
       <h3 className={classes.title}>ما را در فضای مجازی دنبال کنید.</h3>
       <div className={classes.social}>
-        <Link href="http://" target="_newTab">
+        <Link href="https://instagram.com/hamid47hrs" target="_newTab">
           <InstagramIcon className={classes.icons} />
         </Link>
-        <Link href="/hamid" target="_newTab">
+        <Link href="https://twitter.com/HamidRS47" target="_newTab">
           <TwitterIcon className={classes.icons} />
         </Link>
         <Link
-          href="http://linkedin.com/in/hamid-reza-sadati-hrs47"
+          href="https://www.linkedin.com/in/hrsadati/"
           target="_newTab"
         >
           <LinkedInIcon className={classes.icons} />
