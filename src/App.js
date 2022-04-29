@@ -2,7 +2,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,25 +20,38 @@ import ContactUs from "./components/pages/contactUs/ContactUs";
 import VipMembership from "./components/pages/vipMembership/VipMembership";
 import Page404 from "./components/pages/404/Page404";
 import NavigationButton from "./components/header/navigationButton/NavigationButton";
+import OrderList from "./components/pages/admin/ordersList/OrderList";
+import AddProduct from "./components/pages/admin/addProduct/AddProduct";
+import ProductList from "./components/pages/admin/productList/ProductList";
+import UsersList from "./components/pages/admin/usersList/UserList";
+import Admin from "./components/pages/admin/Admin";
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path={'/menu'} component={NavigationButton} />
+          <Route exact path={"/menu"} component={NavigationButton} />
           <Route exact path={"/login"} component={LoginForm} />
           <Route exact path={"/signup"} component={SignUpForm} />
+
           <Main>
             <Route exact path={"/"} component={HomePage} />
-            <Route path={"/products/:productId"} component={ProductPage} />
-            <Route path={"/cafe"} component={CafeStore} />
-            <Route path={"/fast-food"} component={FastFoodStore} />
-            <Route path={"/coming-soon"} component={ComingSoon} />
-            <Route path={"/cart"} component={Cart} />
-            <Route path={"/about-us"} component={AboutUs} />
-            <Route path={"/contact-us"} component={ContactUs} />
-            <Route path={"/vip-membership"} component={VipMembership} />
+            <Route exact path={"/product/:productId"} component={ProductPage} />
+            <Route exact path={"/cafe"} component={CafeStore} />
+            <Route exact path={"/fast-food"} component={FastFoodStore} />
+            <Route exact path={"/cart/:userId"} component={Cart} />
+            <Route exact path={"/about-us"} component={AboutUs} />
+            <Route exact path={"/contact-us"} component={ContactUs} />
+            <Route exact path={"/coming-soon"} component={ComingSoon} />
+            <Route exact path={"/vip-membership"} component={VipMembership} />
             <Route path={"/not-found-404"} component={Page404} />
+
+            {/* Admin Routes */}
+            <Route path={"/admin/add-product"} component={AddProduct} />
+            <Route path={"/admin/products-list"} component={ProductList} />
+            <Route path={"/admin/users-list"} component={UsersList} />
+            <Route path={"/admin/orders-list"} component={OrderList} />
           </Main>
         </Switch>
       </Router>
