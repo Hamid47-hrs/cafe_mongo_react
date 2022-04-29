@@ -1,46 +1,46 @@
 import { useState, useEffect } from "react";
-import ProductCard from "./singleProduct/productCard";
+import AdminHeader from "../header/AdminHeader";
+import ProductCard from "./singleProduct/ProductCard";
 import useStyle from "./ProductListStyles";
 
 const ProductList = () => {
   const classes = useStyle();
   const [products, setProducts] = useState([]);
 
-  const getProductData = () => {
-    fetch("http://127.0.0.1:3001/product/show-all-products", {
+  const getData = () => {
+    fetch("/product.json", {
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
-      })
-      .then((data) => {
-        setProducts(data);
-      })
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    getProductData();
+    getData();
   }, []);
 
   return (
-    <div className={classes.container}>
-      {products &&
-        products.map((item, index) => (
+    <>
+      <AdminHeader />
+      <div className={classes.container}>
+        {products.map((item, index) => (
           <ProductCard
             key={index}
-            name={item.productName}
-            type={item.productType}
-            subset={item.productSubset}
-            // description={item.productDescription}
-            price={item.productPrice}
-            image={item.productImage}
+            name={item.name}
+            type={item.type}
+            subset={item.subset}
+            description={item.description}
+            price={item.price}
+            image={item.image}
+            NOP={item.NumberOfPurchases}
           />
         ))}
-    </div>
+      </div>
+    </>
   );
 };
 
