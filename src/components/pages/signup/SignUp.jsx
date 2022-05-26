@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../../../images/icons/name_logo.png";
@@ -60,22 +61,19 @@ const SignUpForm = () => {
       userPassword: userPassword,
       vipMembership: vipMembership,
     };
-
     const signUpError = signUpValidation(user);
 
     if (signUpError) return toast.error(signUpError);
 
-    fetch("bbbb", {
-      method: "POST",
-      user,
-    })
-      .then()
-      .then((data) => {
-        toast.success(".ثبت نام با موفقیت انجام شد");
-        localStorage.setItem("x-auth-token", data["x-auth-token"]);
-        history.push("/");
+    axios
+      .post("http://127.0.0.1:8080/user/signup", user)
+      .then((res) => {
+        toast.success(res.data.message);
+        history.push("/login");
       })
-      .catch((err) => toast.error(err));
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
   };
   return (
     <div className={classes.container}>
