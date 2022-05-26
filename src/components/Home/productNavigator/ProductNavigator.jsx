@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import ProductCard from "./ProductCard";
 import useStyle from "./ProductNavigatorStyles";
 
@@ -7,19 +8,14 @@ const ProductNavigator = () => {
   const [products, setProducts] = useState([]);
 
   const getData = () => {
-    fetch("./product.json", {
+    fetch("http://127.0.0.1:8080/product/show-top-products", {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
     })
       .then((response) => response.json())
       .then((data) => {
-        data.sort((a, b) => b.NumberOfPurchases - a.NumberOfPurchases);
-        data = data.slice(0, 10);
         setProducts(data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error(err.response.data.message));
   };
   useEffect(() => {
     getData();
@@ -30,13 +26,13 @@ const ProductNavigator = () => {
       {products.map((item, index) => (
         <ProductCard
           key={index}
-          name={item.name}
-          type={item.type}
-          subset={item.subset}
-          description={item.description}
-          price={item.price}
-          image={item.image}
-          NOP={item.NumberOfPurchases}
+          name={item.productName}
+          type={item.productType}
+          subset={item.productSubset}
+          description={item.productDescription}
+          price={item.productPrice}
+          image={item.productImage}
+          NOP={item.numberOfPurchases}
         />
       ))}
     </div>
