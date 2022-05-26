@@ -2,21 +2,17 @@ import { useState, useEffect } from "react";
 import AdminHeader from "../header/AdminHeader";
 import ProductCard from "./singleProduct/ProductCard";
 import useStyle from "./ProductListStyles";
+import { toast } from "react-toastify";
 
 const ProductList = () => {
   const classes = useStyle();
   const [products, setProducts] = useState([]);
 
   const getData = () => {
-    fetch("/product.json", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch("http://127.0.0.1:8080/product/show-all-products")
       .then((response) => response.json())
       .then((data) => setProducts(data))
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("دریافت اطلاعات با خطا مواجه شد."));
   };
 
   useEffect(() => {
@@ -30,13 +26,14 @@ const ProductList = () => {
         {products.map((item, index) => (
           <ProductCard
             key={index}
-            name={item.name}
-            type={item.type}
-            subset={item.subset}
-            description={item.description}
-            price={item.price}
-            image={item.image}
-            NOP={item.NumberOfPurchases}
+            id={item._id}
+            name={item.productName}
+            type={item.productType}
+            subset={item.productSubset}
+            description={item.productDescription}
+            price={item.productPrice}
+            image={item.productImage}
+            NOP={item.numberOfPurchases}
           />
         ))}
       </div>
