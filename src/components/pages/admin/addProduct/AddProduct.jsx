@@ -8,6 +8,7 @@ import {
   Select,
   MenuItem,
 } from "@material-ui/core";
+import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,7 +23,7 @@ const AddProduct = () => {
   const [productType, setProductType] = useState("none");
   const [productSubset, setProductSubset] = useState("");
   const [productPrice, setProductPrice] = useState(0);
-  const [productImage, setProductImage] = useState([]);
+  const [productImage, setProductImage] = useState("");
   const [productImagePath, setProductImagePath] = useState("");
   const [productDescription, setProductDescription] = useState("");
 
@@ -41,16 +42,8 @@ const AddProduct = () => {
   };
 
   const imageUploader = (event) => {
-    if (event.target.files && event.target.files.length > 0)
-      setProductImage(event.target.files[0]);
-
-    const render = new FileReader();
-    render.onload = (event) => {
-      setProductImagePath(event.target.result);
-    };
-    render.readAsDataURL(event.target.files[0]);
+    setProductImage(event.target.files[0]);
   };
-
   const productValidation = (product) => {
     if (!product.productName) return ".نام محصول باید وارد شود";
     if (!product.productType) return ".نوع محصول باید مشخص شود";
@@ -83,7 +76,7 @@ const AddProduct = () => {
     formData.append("productPrice", productPrice);
     formData.append("productDescription", productDescription);
     formData.append("numberOfPurchases", 0);
-    if (productImage) formData.append("image", productImage);
+    if (productImage) formData.append("productImage", productImage);
 
     const config = {
       headers: {
@@ -91,7 +84,13 @@ const AddProduct = () => {
       },
     };
 
-    fetch();
+    axios
+      .post("http://127.0.0.1:8080/admin/add-product", formData, config)
+      .then((res) => {
+        toast.success(res.data.message);
+        resetForm();
+      })
+      .catch((err) => toast.error(err.response.data.message));
   };
   return (
     <>
