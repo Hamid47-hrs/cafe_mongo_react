@@ -2,6 +2,7 @@ import { Button, Typography, Grid, TextField } from "@material-ui/core";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../../../images/icons/name_logo.png";
@@ -15,33 +16,31 @@ const LoginForm = () => {
   const [userPassword, setUserPassword] = useState("");
 
   const loginValidation = (user) => {
-    if (!user.username) return ".نام کاربری وارد نشده است";
-    if (!user.userpassword) return ".رمز عبور وارد نشده است";
+    if (!user.userName) return ".نام کاربری وارد نشده است";
+    if (!user.userPassword) return ".رمز عبور وارد نشده است";
   };
 
   const logInHandler = (event) => {
     event.preventDefault();
 
     const user = {
-      username: userName,
-      userpassword: userPassword,
+      userName: userName,
+      userPassword: userPassword,
     };
 
     const loginError = loginValidation(user);
 
     if (loginError) return toast.error(loginError);
 
-    fetch("xxxx", {
-      method: "POST",
-      user,
-    })
-      .then()
-      .then((data) => {
-        toast.success(".ورود موفقیت آمیز");
-        localStorage.setItem("x-auth-token", data["x-auth-token"]);
+    axios
+      .post("http://127.0.0.1:8080/user/login", user)
+      .then((res) => {
+        console.log(res);
+        toast.success(res.data.message);
+        localStorage.setItem("x-auth-token", res.data["x-auth-token"]);
         history.goBack();
       })
-      .catch((err) => toast.error(err));
+      .catch((err) => toast.error(err.response.data.message));
   };
   return (
     <div className={classes.container}>
