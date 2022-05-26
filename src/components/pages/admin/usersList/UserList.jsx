@@ -1,76 +1,31 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
 import AdminHeader from "../header/AdminHeader";
 import SingleUser from "./singleUser/SingleUser";
 import useStyle from "./UserListStyles";
 
-const users = [
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  {
-    id: 1,
-    username: "hamid47",
-    firstName: "hamid",
-    lastName: "sadati",
-    date: "27/10/1994",
-    NoPourchasses: 10,
-  },
-  
-];
 const UserList = () => {
   const classes = useStyle();
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        "x-auth-token": localStorage.getItem("x-auth-token"),
+      },
+    };
+    axios
+      .post("http://127.0.0.1:8080/admin/users-list", {}, config)
+      .then((res) => {
+        setUsers(res.data);
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
+  }, []);
 
   return (
     <>
@@ -79,7 +34,7 @@ const UserList = () => {
         {users.map((item, index) => (
           <SingleUser
             key={index}
-            username={item.username}
+            username={item.userName}
             firstname={item.firstName}
             lastname={item.lastName}
             date={item.date}
