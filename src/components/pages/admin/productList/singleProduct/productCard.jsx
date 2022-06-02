@@ -19,12 +19,11 @@ const ProductCard = (props) => {
       .delete(`http://127.0.0.1:8080/admin/product/${props.id}`, config)
       .then((res) => toast.success(res.data.message))
       .catch((err) => toast.error(err.message));
-
   };
 
   return (
     <div className={classes.container}>
-      <Link to={`/product/${props.id}`} className={classes.link}>
+      <Link to={`/product/${props.productId}`} className={classes.link}>
         <div className={classes.imageContainer}>
           <img
             className={classes.productImage}

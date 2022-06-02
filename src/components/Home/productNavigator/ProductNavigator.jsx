@@ -26,6 +26,7 @@ const ProductNavigator = () => {
       {products.map((item, index) => (
         <ProductCard
           key={index}
+          productId={item._id}
           name={item.productName}
           type={item.productType}
           subset={item.productSubset}
