@@ -1,21 +1,68 @@
+import { useEffect, useState } from "react";
 import { Button, Typography } from "@material-ui/core";
+import { toast } from "react-toastify";
+import axios from "axios";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import useStyle from "./SingleProductStyles";
-import { useEffect, useState } from "react";
 
-const SingleProduct = ({ name, subcet, price, image }) => {
+const SingleProduct = ({
+  userId,
+  productId,
+  name,
+  subcet,
+  price,
+  image,
+  quantity,
+  setTotalPrice,
+  setItemsCount,
+}) => {
   const classes = useStyle();
-  const [counter, setCounter] = useState(+1);
-  const [totalPrice, setTotalPrice] = useState(+price);
+  const [counter, setCounter] = useState(+quantity);
 
   const removeOneItem = () => {
     counter > 1 && setCounter(counter - 1);
   };
 
   useEffect(() => {
-    setTotalPrice(price * counter);
-  }, [counter, price]);
+    const data = {
+      userId: userId,
+      productId: productId,
+      quantity: counter,
+    };
 
+    const config = {
+      headers: {
+        "x-auth-token": localStorage.getItem("x-auth-token"),
+      },
+    };
+
+    axios
+      .post("http://127.0.0.1:8080/cart/update-cart", data, config)
+      .then()
+      .catch((err) => toast.error(err.response.data.message));
+    setTotalPrice(counter);
+  }, [counter]);
+
+  const deleteCartItem = () => {
+    const data = {
+      userId: userId,
+      productId: productId,
+    };
+
+    const config = {
+      headers: {
+        "x-auth-token": localStorage.getItem("x-auth-token"),
+      },
+    };
+
+    axios
+      .post("http://127.0.0.1:8080/cart/delete-cart-item", data, config)
+      .then((res) => {
+        toast.success(res.data.message);
+        setItemsCount(-1);
+      })
+      .catch((err) => toast.error(err.response.data.message));
+  };
   return (
     <div className={classes.container}>
       <div className={classes.topContainer}>
@@ -31,7 +78,7 @@ const SingleProduct = ({ name, subcet, price, image }) => {
             {price} تومان
           </Typography>
         </div>
-        <Button className={classes.deleteButton}>
+        <Button className={classes.deleteButton} onClick={deleteCartItem}>
           <DeleteForeverIcon className={classes.deleteButtonIcon} />
         </Button>
         <span className={classes.deleteButtonSpan}>
@@ -44,7 +91,7 @@ const SingleProduct = ({ name, subcet, price, image }) => {
         </Button>
         <Typography className={classes.numberOfProducts}>
           <span className={classes.numberOfProducts}>تعداد :</span>
-          <span className={classes.numberOfProducts}>{counter}</span>
+          <span className={classes.numberOfProducts}>{quantity}</span>
         </Typography>
         <Button
           className={classes.addOneButton}
