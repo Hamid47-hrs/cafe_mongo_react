@@ -1,13 +1,33 @@
 import { Button } from "@material-ui/core";
+import axios from "axios";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import useStyle from "./ProductCardStyles";
 
 const ProductCard = (props) => {
   const classes = useStyle();
 
   const addToCart = () => {
-  };
+    const newCart = {
+      userId: localStorage.getItem("user-id"),
+      productId: props.productId,
+      productName: props.name,
+      productSubset: props.subset,
+      productPrice: props.price,
+      productImage: props.image,
+    };
 
+    const config = {
+      headers: {
+        "x-auth-token": localStorage.getItem("x-auth-token"),
+      },
+    };
+
+    axios
+      .post("http://127.0.0.1:8080/cart/add-to-cart", newCart, config)
+      .than((res) => toast.success(res.data.message))
+      .catch((err) => toast.error(err.response.data.message));
+  };
 
   return (
     <div className={classes.container}>
