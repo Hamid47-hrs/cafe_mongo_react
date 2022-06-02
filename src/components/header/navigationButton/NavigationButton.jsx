@@ -14,6 +14,7 @@ const NavigationButton = () => {
   const [logedIn, setLogedIn] = useState("");
 
   const userAuthorized = localStorage.getItem("x-auth-token");
+  const userId = localStorage.getItem("user-id");
 
   const logOut = () => {
     setLogedIn("");
@@ -44,7 +45,7 @@ const NavigationButton = () => {
         ) : (
           <SignButton />
         )}
-        <Link to="/cart">
+        <Link to={`/cart/${userId}`}>
           <Button className={classes.shoppingCart}>
             <ShoppingCartIcon />
           </Button>

@@ -16,6 +16,7 @@ const Header = () => {
   const [logedIn, setLogedIn] = useState("");
 
   const userAuthorized = localStorage.getItem("x-auth-token");
+  const userId = localStorage.getItem("user-id");
 
   const logOut = () => {
     setLogedIn("");
@@ -53,7 +54,7 @@ const Header = () => {
           ) : (
             <SignButton />
           )}
-          <Link to="/cart/:userId">
+          <Link to={`/cart/${userId}`}>
             <Button className={classes.shoppingCart}>
               <ShoppingCartIcon />
             </Button>
