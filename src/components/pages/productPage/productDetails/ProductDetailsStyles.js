@@ -11,9 +11,19 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: "#dddddd44",
     width: "40%",
     padding: "1rem 3rem",
-    height: "fit-content",
     borderRadius: "8px",
     boxShadow: "5px 5px 5px #00000022",
+    [theme.breakpoints.down("670")]: {
+      position: "fixed",
+      display: "flex",
+      justifyContent: "space-around",
+      alignItems: "flex-start",
+      bottom: 0,
+      left: 0,
+      backgroundColor: "#fff",
+      width: "100%",
+      zIndex: "1",
+    },
   },
   productTitle: {
     fontFamily: "vazir-bold",
@@ -21,6 +31,10 @@ const useStyle = makeStyles((theme) => ({
     textShadow: "0 0 5px #00000022",
     textAlign: "center",
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down("670")]: {
+      fontFamily: "vazir",
+      fontSize: "1.2rem",
+    },
   },
   productPrice: {
     fontFamily: "vazir",
@@ -28,6 +42,9 @@ const useStyle = makeStyles((theme) => ({
     textShadow: "0 0 5px #00000022",
     textAlign: "left",
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down("670")]: {
+      fontSize: "1.2rem",
+    },
   },
   buttonContainer: {
     display: "flex",
