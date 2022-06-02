@@ -38,6 +38,7 @@ const LoginForm = () => {
         console.log(res);
         toast.success(res.data.message);
         localStorage.setItem("x-auth-token", res.data["x-auth-token"]);
+        localStorage.setItem("user-id", res.data.userId);
         history.goBack();
       })
       .catch((err) => toast.error(err.response.data.message));
