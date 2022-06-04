@@ -21,6 +21,7 @@ const Header = () => {
   const logOut = () => {
     setLogedIn("");
     localStorage.removeItem("x-auth-token");
+    localStorage.removeItem("user-id");
     window.location.reload();
   };
 
