@@ -17,13 +17,19 @@ const SingleProduct = ({
   setItemsCount,
 }) => {
   const classes = useStyle();
-  const [counter, setCounter] = useState(+quantity);
+  const [counter, setCounter] = useState(parseInt(quantity));
 
   const removeOneItem = () => {
     counter > 1 && setCounter(counter - 1);
+    updateCartItem();
   };
 
-  useEffect(() => {
+  const addOneItem = () => {
+    setCounter(counter + 1);
+    updateCartItem();
+  };
+
+  const updateCartItem = () => {
     const data = {
       userId: userId,
       productId: productId,
@@ -37,11 +43,11 @@ const SingleProduct = ({
     };
 
     axios
-      .post("http://127.0.0.1:8080/cart/update-cart", data, config)
+      .post("http://127.0.0.1:8080/cart/update-cart-items", data, config)
       .then()
       .catch((err) => toast.error(err.response.data.message));
     setTotalPrice(counter);
-  }, [counter]);
+  };
 
   const deleteCartItem = () => {
     const data = {
@@ -78,7 +84,10 @@ const SingleProduct = ({
             {price} تومان
           </Typography>
         </div>
-        <Button className={classes.deleteButton} onClick={deleteCartItem}>
+        <Button
+          className={classes.deleteButton}
+          onClick={() => deleteCartItem()}
+        >
           <DeleteForeverIcon className={classes.deleteButtonIcon} />
         </Button>
         <span className={classes.deleteButtonSpan}>
@@ -86,17 +95,17 @@ const SingleProduct = ({
         </span>
       </div>
       <div className={classes.BottomContainer}>
-        <Button className={classes.removeOneButton} onClick={removeOneItem}>
+        <Button
+          className={classes.removeOneButton}
+          onClick={() => removeOneItem()}
+        >
           -
         </Button>
         <Typography className={classes.numberOfProducts}>
           <span className={classes.numberOfProducts}>تعداد :</span>
           <span className={classes.numberOfProducts}>{quantity}</span>
         </Typography>
-        <Button
-          className={classes.addOneButton}
-          onClick={() => setCounter(counter + 1)}
-        >
+        <Button className={classes.addOneButton} onClick={() => addOneItem()}>
           +
         </Button>
       </div>
