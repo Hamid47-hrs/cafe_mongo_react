@@ -76,6 +76,66 @@ const useStyle = makeStyles((theme) => ({
       fontSize: "0.7rem",
     },
   },
+  modalContainer: {
+    position: "absolute",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    alignItems: "center",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width: "60%",
+    height: "70vh",
+    margin: "auto",
+    padding: theme.spacing(3),
+    backgroundColor: "#fff",
+    overflow: "hidden",
+    borderRadius: 4,
+    boxShadow: "5px 5px 1pc #00000077",
+    "& .MuiFormLabel-root": {
+      fontFamily: "vazir",
+    },
+    "& .MuiInputBase-input": {
+      fontFamily: "vazir",
+    },
+    [theme.breakpoints.down("480")]: {
+      width: "95%",
+      height: "95vh",
+    },
+  },
+  modalContainerLabel: {
+    fontFamily: "vazir-medium",
+  },
+  listContainer: {
+    height: "40%",
+    overflow: "auto",
+  },
+  listItems: {
+    margin: 10,
+  },
+  cancel_submitButtonContainer: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-around",
+    [theme.breakpoints.down("480")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  },
+  finalSubmitButton: {
+    width: 150,
+    margin: 10,
+    border: "2px solid #28a102",
+    backgroundColor: "#28a10222",
+  },
+  cancelButton: {
+    width: 150,
+    margin: 10,
+    border: "2px solid #c94646",
+    backgroundColor: "#c9464666",
+  },
 }));
 
 export default useStyle;
