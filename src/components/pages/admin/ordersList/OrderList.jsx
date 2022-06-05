@@ -9,6 +9,7 @@ const OrderList = () => {
   const classes = useStyle();
 
   const [userData, setUserData] = useState([]);
+  const [refresh, setRefresh] = useState(userData.length);
 
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const OrderList = () => {
       .catch((err) => {
         toast.error(err.response.data.message);
       });
-  }, []);
+  }, [refresh]);
   return (
     <>
       <AdminHeader />
@@ -37,6 +38,7 @@ const OrderList = () => {
             orderDate={item.orderDate}
             address={item.userAddress}
             order={item.items}
+            refresh={setRefresh}
           />
         ))}
       </div>
