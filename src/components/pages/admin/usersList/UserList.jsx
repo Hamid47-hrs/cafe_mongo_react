@@ -10,6 +10,7 @@ const UserList = () => {
   const classes = useStyle();
 
   const [users, setUsers] = useState([]);
+  const [refreshUser, setRefreshUser] = useState(users.length);
 
   useEffect(() => {
     const config = {
@@ -25,7 +26,7 @@ const UserList = () => {
       .catch((err) => {
         toast.error(err.response.data.message);
       });
-  }, []);
+  }, [refreshUser, users]);
 
   return (
     <>
@@ -34,11 +35,14 @@ const UserList = () => {
         {users.map((item, index) => (
           <SingleUser
             key={index}
+            userId={item._id}
             username={item.userName}
             firstname={item.firstName}
             lastname={item.lastName}
-            date={item.date}
-            NoP={item.NoPourchasses}
+            vip={item.vipMembership}
+            date={item.registeryDate}
+            NoP={item.numberOfPurchases}
+            refresh={setRefreshUser}
           />
         ))}
       </div>
