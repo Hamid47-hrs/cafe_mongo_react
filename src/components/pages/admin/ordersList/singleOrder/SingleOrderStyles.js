@@ -64,22 +64,22 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "center",
     marginTop: theme.spacing(2),
   },
-  // sendOrder: {
-  //   border: "solid 2px #004600",
-  //   color: "#FFF",
-  //   backgroundColor: "#007744aa",
-  //   "&:hover": {
-  //     color: "#000",
-  //   },
-  // },
-  removeOrder: {
-    border: "solid 2px #ff7070",
+  confirmOrder: {
+    border: "solid 2px #004600",
     color: "#FFF",
-    backgroundColor: "#800000",
+    backgroundColor: "#007744aa",
     "&:hover": {
       color: "#000",
     },
   },
+  // removeOrder: {
+  //   border: "solid 2px #ff7070",
+  //   color: "#FFF",
+  //   backgroundColor: "#800000",
+  //   "&:hover": {
+  //     color: "#000",
+  //   },
+  // },
 }));
 
 export default useStyle;

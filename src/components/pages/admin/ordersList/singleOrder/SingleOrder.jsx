@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { toast } from "react-toastify";
 import useStyle from "./SingleOrderStyles";
 
-const SingleOrder = ({ userId, orderDate, address, order }) => {
+const SingleOrder = ({ userId, orderDate, address, order, refresh }) => {
   const classes = useStyle();
 
   const [userData, setUserData] = useState([]);
@@ -25,6 +25,24 @@ const SingleOrder = ({ userId, orderDate, address, order }) => {
         toast.error(err.response.data.message);
       });
   });
+
+  const confirmOrder = () => {
+    const config = {
+      headers: {
+        "x-auth-token": localStorage.getItem("x-auth-token"),
+      },
+    };
+    axios
+      .delete("http://127.0.0.1:8080/admin/delete-cart/" + userId, config)
+      .then((res) => {
+        toast.success(res.data.message);
+        refresh(-1);
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
+  }
+
   return (
     <div className={classes.container}>
       {userData.map((item, index) => (
@@ -42,7 +60,7 @@ const SingleOrder = ({ userId, orderDate, address, order }) => {
             {item.phoneNumber}
           </Typography>
           <Typography className={classes.address}>
-            <p className={classes.coloredText}>آدرس:</p>
+            <span className={classes.coloredText}>آدرس:</span>
             {address}
           </Typography>
           <Typography className={classes.orderDate}>
@@ -69,8 +87,8 @@ const SingleOrder = ({ userId, orderDate, address, order }) => {
       </div>
       <Divider />
       <div className={classes.buttonsContainer}>
-        {/* <Button className={classes.sendOrder}>ارسال سفارش</Button> */}
-        <Button className={classes.removeOrder}>حذف سفارش</Button>
+        <Button className={classes.confirmOrder} onClick={confirmOrder}>تایید سفارش</Button>
+        {/* <Button className={classes.removeOrder}>حذف سفارش</Button> */}
       </div>
     </div>
   );
