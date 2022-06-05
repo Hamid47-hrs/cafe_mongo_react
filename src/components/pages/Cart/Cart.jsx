@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Button,
   Divider,
@@ -10,12 +10,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import SingleProduct from "./singleProduct/SingleProduct";
 import useStyle from "./CartStyles";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 const Cart = (props) => {
   const classes = useStyle();
-  const history = useHistory();
 
   const [product, setProduct] = useState([]);
   const [totalPrice, setTotalPrice] = useState([]);
@@ -49,9 +46,13 @@ const Cart = (props) => {
   }, [props.match.params.userId, totalPrice, itemsCount]);
 
   const submitShopping = () => {
+    if (address.length < 5) {
+      return toast.error("آدرس را کامل وارد کنید.");
+    }
     const data = {
       userId: props.match.params.userId,
       userAddress: address,
+      orderDate: new Date().toLocaleString(),
     };
     const config = {
       headers: {
@@ -62,13 +63,13 @@ const Cart = (props) => {
     setOpenModal(false);
 
     axios
-      .post("http://127.0.0.1:8080/cart/finalize-shipping", data, config)
+      .post("http://127.0.0.1:8080/cart/finalize-shopping", data, config)
       .then((res) => toast.success(res.data.message))
       .catch((err) => {
         toast.error(err.response.data.message);
       });
 
-    history.go("/cart");
+    window.location.reload();
   };
   return (
     <div className={classes.container}>
