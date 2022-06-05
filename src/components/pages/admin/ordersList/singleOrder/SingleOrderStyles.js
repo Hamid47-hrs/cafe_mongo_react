@@ -61,17 +61,17 @@ const useStyle = makeStyles((theme) => ({
   },
   buttonsContainer: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     marginTop: theme.spacing(2),
   },
-  sendOrder: {
-    border: "solid 2px #004600",
-    color: "#FFF",
-    backgroundColor: "#007744aa",
-    "&:hover": {
-      color: "#000",
-    },
-  },
+  // sendOrder: {
+  //   border: "solid 2px #004600",
+  //   color: "#FFF",
+  //   backgroundColor: "#007744aa",
+  //   "&:hover": {
+  //     color: "#000",
+  //   },
+  // },
   removeOrder: {
     border: "solid 2px #ff7070",
     color: "#FFF",
