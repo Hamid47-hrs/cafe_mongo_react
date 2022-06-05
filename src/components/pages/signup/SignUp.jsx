@@ -30,6 +30,7 @@ const SignUpForm = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [userPasswordConfirm, setUserPasswordConfirm] = useState("");
+  const [userPhoneNumber, setUserPhoneNumber] = useState("");
   const [vipMembership, setVipMembership] = useState(false);
 
   const handleVipChange = () => {
@@ -150,6 +151,16 @@ const SignUpForm = () => {
                 type="password"
                 value={userPasswordConfirm ? userPasswordConfirm : ""}
                 onChange={(event) => setUserPasswordConfirm(event.target.value)}
+              />
+            </Grid>
+            <Grid item className={classes.userGridItem}>
+              <TextField
+                className={classes.userInput}
+                name="userPhoneNumber"
+                label="شماره تماس"
+                type="text"
+                value={userPhoneNumber ? userPhoneNumber : ""}
+                onChange={(event) => setUserPhoneNumber(event.target.value)}
               />
             </Grid>
           </Grid>
