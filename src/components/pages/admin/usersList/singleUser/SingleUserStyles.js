@@ -22,7 +22,6 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   fullName: {
-    display: "flex",
     marginBottom: theme.spacing(2),
   },
   fullNameText: {
