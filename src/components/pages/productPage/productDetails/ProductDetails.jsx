@@ -32,8 +32,12 @@ const ProductDetails = ({
 
     axios
       .post("http://127.0.0.1:8080/cart/add-to-cart", newCart, config)
-      .than((res) => toast.success(res.data.message))
-      .catch((err) => toast.error(err.response.data.message));
+      .then((res) => {
+        toast.success(res.data.message);
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
   };
 
   return (
