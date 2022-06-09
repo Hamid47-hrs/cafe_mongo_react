@@ -8,9 +8,7 @@ import image6 from "../../../images/frame_made_pieces_pizza_red_background_16651
 import image7 from "../../../images/kXmJbh.jpg";
 
 const iamges = [
-  {
-    url: image1,
-  },
+  { url: image1 },
   { url: image2 },
   { url: image3 },
   { url: image4 },
