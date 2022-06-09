@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Typography } from "@material-ui/core";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -13,23 +13,22 @@ const SingleProduct = ({
   price,
   image,
   quantity,
-  setTotalPrice,
   setItemsCount,
 }) => {
   const classes = useStyle();
   const [counter, setCounter] = useState(parseInt(quantity));
 
   const removeOneItem = () => {
-    counter > 1 && setCounter(counter - 1);
-    updateCartItem();
+    ;
+    counter > 1 && setCounter(counter - 1,updateCartItem());
   };
 
   const addOneItem = () => {
-    setCounter(counter + 1);
     updateCartItem();
+    setCounter(counter + 1,updateCartItem());
   };
 
-  const updateCartItem = () => {
+  const updateCartItem = (callBack) => {
     const data = {
       userId: userId,
       productId: productId,
@@ -46,7 +45,7 @@ const SingleProduct = ({
       .post("http://127.0.0.1:8080/cart/update-cart-items", data, config)
       .then()
       .catch((err) => toast.error(err.response.data.message));
-    setTotalPrice(counter);
+    setItemsCount(counter);
   };
 
   const deleteCartItem = () => {
@@ -69,6 +68,7 @@ const SingleProduct = ({
       })
       .catch((err) => toast.error(err.response.data.message));
   };
+
   return (
     <div className={classes.container}>
       <div className={classes.topContainer}>
@@ -95,17 +95,14 @@ const SingleProduct = ({
         </span>
       </div>
       <div className={classes.BottomContainer}>
-        <Button
-          className={classes.removeOneButton}
-          onClick={() => removeOneItem()}
-        >
+        <Button className={classes.removeOneButton} onClick={removeOneItem}>
           -
         </Button>
         <Typography className={classes.numberOfProducts}>
           <span className={classes.numberOfProducts}>تعداد :</span>
-          <span className={classes.numberOfProducts}>{quantity}</span>
+          <span className={classes.numberOfProducts}>{counter}</span>
         </Typography>
-        <Button className={classes.addOneButton} onClick={() => addOneItem()}>
+        <Button className={classes.addOneButton} onClick={addOneItem}>
           +
         </Button>
       </div>
