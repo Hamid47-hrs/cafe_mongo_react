@@ -15,7 +15,6 @@ const Cart = (props) => {
   const classes = useStyle();
 
   const [product, setProduct] = useState([]);
-  const [totalPrice, setTotalPrice] = useState([]);
   const [itemsCount, setItemsCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [address, setAddress] = useState("");
@@ -43,7 +42,7 @@ const Cart = (props) => {
       .catch((err) => {
         toast.error(err);
       });
-  }, [props.match.params.userId, totalPrice, itemsCount]);
+  }, [props.match.params.userId, itemsCount]);
 
   const submitShopping = () => {
     if (address.length < 5) {
@@ -89,7 +88,6 @@ const Cart = (props) => {
                 price={item.productPrice}
                 image={item.productImage}
                 quantity={item.quantity}
-                setTotalPrice={setTotalPrice}
                 setItemsCount={setItemsCount}
               />
             ))
