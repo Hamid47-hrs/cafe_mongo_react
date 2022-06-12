@@ -19,7 +19,7 @@ const OrderList = () => {
       },
     };
     axios
-      .post("http://127.0.0.1:8080/admin/cart-list", {}, config)
+      .post("https://cafe-mongo-backend.herokuapp.com/admin/cart-list", {}, config)
       .then((result) => {
         setUserData(result.data);
       })

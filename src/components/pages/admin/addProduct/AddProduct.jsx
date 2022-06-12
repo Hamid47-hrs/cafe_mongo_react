@@ -85,7 +85,7 @@ const AddProduct = () => {
     };
 
     axios
-      .post("http://127.0.0.1:8080/admin/add-product", formData, config)
+      .post("https://cafe-mongo-backend.herokuapp.com/admin/add-product", formData, config)
       .then((res) => {
         toast.success(res.data.message);
         resetForm();

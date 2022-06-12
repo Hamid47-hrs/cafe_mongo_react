@@ -42,8 +42,8 @@ const SingleProduct = ({
     };
 
     axios
-      .post("http://127.0.0.1:8080/cart/update-cart-items", data, config)
-      .then()
+      .post("https://cafe-mongo-backend.herokuapp.com/cart/update-cart-items", data, config)
+      .then(res => toast.success(res.data.message))
       .catch((err) => toast.error(err.response.data.message));
     setItemsCount(counter);
   };
@@ -61,7 +61,7 @@ const SingleProduct = ({
     };
 
     axios
-      .post("http://127.0.0.1:8080/cart/delete-cart-item", data, config)
+      .post("https://cafe-mongo-backend.herokuapp.com/cart/delete-cart-item", data, config)
       .then((res) => {
         toast.success(res.data.message);
         setItemsCount(-1);

@@ -10,7 +10,7 @@ const CafeStore = () => {
 
   const getData = () => {
     axios
-      .get("http://127.0.0.1:8080/product/show-cafe-products")
+      .get("https://cafe-mongo-backend.herokuapp.com/product/show-cafe-products")
       .then((res) => setProducts(res.data))
       .catch((err) => toast.error(err.response.data.message));
   };

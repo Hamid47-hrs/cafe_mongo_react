@@ -9,7 +9,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   const getData = () => {
-    fetch("http://127.0.0.1:8080/product/show-all-products")
+    fetch("https://cafe-mongo-backend.herokuapp.com/product/show-all-products")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((err) => toast.error("دریافت اطلاعات با خطا مواجه شد."));

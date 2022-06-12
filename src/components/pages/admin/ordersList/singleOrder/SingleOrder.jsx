@@ -17,7 +17,7 @@ const SingleOrder = ({ userId, orderDate, address, order, refresh }) => {
       },
     };
     axios
-      .post("http://127.0.0.1:8080/admin/user/" + userId, {}, config)
+      .post("https://cafe-mongo-backend.herokuapp.com/admin/user/" + userId, {}, config)
       .then((result) => {
         setUserData(result.data);
       })
@@ -33,7 +33,7 @@ const SingleOrder = ({ userId, orderDate, address, order, refresh }) => {
       },
     };
     axios
-      .delete("http://127.0.0.1:8080/admin/delete-cart/" + userId, config)
+      .delete("https://cafe-mongo-backend.herokuapp.com/admin/delete-cart/" + userId, config)
       .then((res) => {
         toast.success(res.data.message);
         refresh(-1);

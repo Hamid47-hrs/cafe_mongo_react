@@ -13,7 +13,7 @@ const ProductPage = (props) => {
   useEffect(() => {
     const productId = props.match.params.productId;
     axios
-      .get(`http://127.0.0.1:8080/product/${productId}`)
+      .get(`https://cafe-mongo-backend.herokuapp.com/product/${productId}`)
       .then((res) => {
         setProduct(res.data);
       })

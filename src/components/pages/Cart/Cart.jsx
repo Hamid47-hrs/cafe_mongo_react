@@ -34,7 +34,7 @@ const Cart = (props) => {
     };
 
     axios
-      .get("http://127.0.0.1:8080/cart/" + cartId, config)
+      .get("https://cafe-mongo-backend.herokuapp.com/cart/" + cartId, config)
       .then((res) => {
         setProduct(res.data[0].items);
         setItemsCount(res.data.length);
@@ -62,13 +62,18 @@ const Cart = (props) => {
     setOpenModal(false);
 
     axios
-      .post("http://127.0.0.1:8080/cart/finalize-shopping", data, config)
-      .then((res) => toast.success(res.data.message))
+      .post(
+        "https://cafe-mongo-backend.herokuapp.com/cart/finalize-shopping",
+        data,
+        config
+      )
+      .then((res) => {
+        toast.success(res.data.message);
+        window.location.reload();
+      })
       .catch((err) => {
         toast.error(err.response.data.message);
       });
-
-    window.location.reload();
   };
   return (
     <div className={classes.container}>

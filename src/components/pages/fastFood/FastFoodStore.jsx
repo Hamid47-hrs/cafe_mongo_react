@@ -10,7 +10,7 @@ const FastFoodStore = () => {
 
   const getData = () => {
     axios
-      .get("http://127.0.0.1:8080/product/show-fastfood-products")
+      .get("https://cafe-mongo-backend.herokuapp.com/product/show-fastfood-products")
       .then((res) => setProducts(res.data))
       .catch((err) => toast.error(err.response.data.message));
   };

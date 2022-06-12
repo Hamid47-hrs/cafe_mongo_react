@@ -24,7 +24,7 @@ const ProductCard = (props) => {
     };
 
     axios
-      .post("http://127.0.0.1:8080/cart/add-to-cart", newCart, config)
+      .post("https://cafe-mongo-backend.herokuapp.com/cart/add-to-cart", newCart, config)
       .then((result) => {
         toast.success(result.data.message);
       })

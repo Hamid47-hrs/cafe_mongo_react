@@ -33,7 +33,7 @@ const LoginForm = () => {
     if (loginError) return toast.error(loginError);
 
     axios
-      .post("http://127.0.0.1:8080/user/login", user)
+      .post("https://cafe-mongo-backend.herokuapp.com/user/login", user)
       .then((res) => {
         console.log(res);
         toast.success(res.data.message);

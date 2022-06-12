@@ -8,7 +8,7 @@ const ProductNavigator = () => {
   const [products, setProducts] = useState([]);
 
   const getData = () => {
-    fetch("http://127.0.0.1:8080/product/show-top-products", {
+    fetch("https://cafe-mongo-backend.herokuapp.com/product/show-top-products", {
       method: "GET",
     })
       .then((response) => response.json())

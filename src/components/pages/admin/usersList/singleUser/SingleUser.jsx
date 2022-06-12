@@ -14,7 +14,7 @@ const SingleUser = (props) => {
       },
     };
     axios
-      .delete("http://127.0.0.1:8080/admin/delete-user/" + userId, config)
+      .delete("https://cafe-mongo-backend.herokuapp.com/admin/delete-user/" + userId, config)
       .then((res) => {
         toast.success(res.data.message);
         props.refresh(-1);

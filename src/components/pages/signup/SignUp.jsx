@@ -67,7 +67,7 @@ const SignUpForm = () => {
     if (signUpError) return toast.error(signUpError);
 
     axios
-      .post("http://127.0.0.1:8080/user/signup", user)
+      .post("https://cafe-mongo-backend.herokuapp.com/user/signup", user)
       .then((res) => {
         toast.success(res.data.message);
         history.push("/login");

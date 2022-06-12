@@ -1,6 +1,5 @@
 import { Button } from "@material-ui/core";
 import axios from "axios";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import useStyle from "./ProductCardStyles";
@@ -16,7 +15,7 @@ const ProductCard = (props) => {
     };
 
     axios
-      .delete(`http://127.0.0.1:8080/admin/product/${props.id}`, config)
+      .delete(`https://cafe-mongo-backend.herokuapp.com/admin/product/${props.id}`, config)
       .then((res) => toast.success(res.data.message))
       .catch((err) => toast.error(err.message));
   };

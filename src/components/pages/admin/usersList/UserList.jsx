@@ -19,7 +19,7 @@ const UserList = () => {
       },
     };
     axios
-      .post("http://127.0.0.1:8080/admin/users-list", {}, config)
+      .post("https://cafe-mongo-backend.herokuapp.com/admin/users-list", {}, config)
       .then((res) => {
         setUsers(res.data);
       })
